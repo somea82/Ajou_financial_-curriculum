@@ -1,0 +1,145 @@
+@import url("common.css");
+
+*{
+    box-sizing :border-box;
+}
+
+body,html{
+    margin:0px;
+    padding:0px;
+    height:100%;
+    box-sizing :border-box;
+}
+
+.main_contents{
+    display:flex;
+    position:relative;
+    height:92%;
+    min-width: 1400px;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+span{
+    width : 300px;
+    height : 300px;
+    border-radius : 25px;
+    background-color: #FFFFFF;
+	
+    box-shadow :  2px 2px 8px #d0d0d0,
+                -2px -2px 8px #ffffff;
+    display: table-cell;
+    vertical-align:middle;
+    margin: 60px 30px 0px 30px;
+}
+
+span:hover{
+    width : 300px;
+    height : 300px;
+    border-radius : 25px;
+    background-color: #454545;
+	
+    box-shadow :  2px 2px 8px #d0d0d0,
+                -2px -2px 8px #ffffff;
+    display: table-cell;
+    vertical-align:middle;
+    margin: 60px 30px 0px 30px;
+    cursor:pointer;
+}
+
+.main_title{
+	background-color:#3462DC;
+	height : 35%;
+	width: 100%;
+	position: relative;
+	display:flex;
+	flex-direction:column;
+}
+
+.main_title_txt{
+	color:white;
+	font-size:40pt;
+	margin : 50px 3px 20px 3px;
+  	width: 100%;
+  	text-align:center;
+  	font-weight: bold;
+}
+
+.tutorial_video{
+	color: white;
+    font-size: 12pt;
+    margin: 3px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    align-items: center;
+    justify-content: center;
+}
+
+#play_but{
+	width:20px;
+	height:20px;
+	margin:0 7px;
+}
+
+.menu_box{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 5px;
+	height:auto;
+	
+}
+
+.menu_box span{
+	color : #3462DC;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 15px;
+	position: relative;
+}
+
+.menu_box_title{
+	font-size:40pt;
+	font-weight:900;
+}
+
+.menu_box_sub_title{
+	font-weight:600;
+}
+
+.menu_box_cont{
+	font-size:11pt;
+}
+
+span:hover .left_up p{
+	color : #FFFFFF;
+	text-align : left;
+}
+
+.left_up p{
+	text-align : left;
+}
+span:hover .right_bottom p{
+	color : #08FEB9;
+	position: absolute;
+    text-align: right;
+    margin-bottom: 10px;
+    bottom: 15px;
+    right: 20px;
+}
+
+.right_bottom p{
+	position: absolute;
+    text-align: right;
+    margin-bottom: 10px;
+    bottom: 15px;
+    right: 20px;
+}
+
+
+

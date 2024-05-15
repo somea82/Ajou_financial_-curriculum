@@ -1,0 +1,253 @@
+@import url("common.css");
+
+/*
+    main contents section
+*/
+.cil_table_section{
+    height : 100%;
+    background-color : #f5f5f5;
+    background-image: linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff), linear-gradient(45deg, #ffffff 25%, transparent 25%, transparent 75%, #ffffff 75%, #ffffff);
+    background-position: 0 0, 1px 1px;
+    background-size: 1px 1px;
+    min-width:900px;
+    min-height:100%;
+}
+
+.cil_table_section table{
+    border-collapse:collapse;
+    height: 100%;
+}
+
+.cil_table_section table td,
+.cil_table_section table th {
+    border-right: solid 2px rgb(228, 228, 228);
+    border-bottom: none;
+    width: 140px;
+    height: 38px;
+    text-align: center;
+    font-size: 10px;
+    padding: 1px 14px;
+    color: #292828;
+    /* display: flex; */
+}
+.cil_table_section table > tr:last-child > td {
+    height: 35px;
+}
+
+.cil_table_section table th{
+    border-right:none;
+    /*background-color: #68b5f8;*/
+    color:#585858;
+    height:50px;
+}
+
+span {
+    padding: 1px 8px;
+    text-align: center;
+    width: 110px;
+    height: 32px;
+    border-radius: 5px;
+    display: table-cell;
+    vertical-align: middle;
+    background-color: #fbfbfb;
+    box-shadow: 2px 2px 5px #d3d1d1, -2px -2px 2px #f2f2f2;
+    word-break: keep-all;
+}
+
+.class_mark{
+    background: #9F9F9F;
+    color:white;
+}
+
+.choice_math{
+    width:260px;
+}
+
+
+
+/*Modal*/
+.modal_wrap{
+    display: none;
+    flex-direction:column;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    top:60%;
+    left: 50%;
+    margin: -250px 0 0 -250px;
+    background: rgb(254 254 254);
+    z-index: 2;
+    border-radius:5px;
+}
+.modal_side_wrap{
+    display: none;
+    flex-direction:column;
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    top:60%;
+    left: 40%;
+    margin: -250px 0 0 -250px;
+    background: rgb(254 254 254);
+    z-index: 2;
+    border-radius:5px;
+}
+.modal_header {
+    height: 10%;
+    padding-left: 15px;
+    border-bottom: 1px solid #464646;
+    color: #3462dc;
+    font-size: 16px;
+    font-weight: bold;
+    padding-top: 0;
+}
+
+.modal_body{
+    height:90%;
+    display: flex;
+    flex-direction:row;
+}
+
+.modal_left_wrap, .modal_right_wrap{
+    height:100%;
+    width:50%;
+    border-right:1px solid #c7c7c7;
+    padding:15px;
+}
+
+.modal_left_wrap div, .modal_right_wrap div{
+    height:20%;
+    border-bottom:1px dashed #c7c7c7;
+}
+.modal_left_wrap div p, .modal_right_wrap div p{
+    font-size:13px;
+}
+.modal_left_wrap div .title, .modal_right_wrap div .title{
+    font-size:14px;
+    font-weight:bold;
+}
+
+.details_wrap{
+    height: 60%;
+}
+
+.detail_cont{
+    height: 180%;
+    overflow-y: scroll;
+    line-height:1.5em;
+}
+
+.subject_icon{
+    width: 18%;
+}
+
+.icon_wrap {
+    padding-top: 9px;
+}
+
+.black_bg{
+    display: none;
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0,0, 0.5);
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.area_select{
+    width:150px;
+    height: 25px;
+    text-align:center;
+}
+
+/*Hightlight*/
+.m_mark, .c_mark, .s_mark{
+    background:#c7c7c7;
+    position:relative;
+    right:-10px;
+    width:25px;
+    height:25px;
+    border-radius:20px;
+    border : solid 1px rgb(228, 228, 228);
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    text-align:center;
+}
+
+.m_text{
+    background:none;
+    font-size:15px;
+    position:relative;
+    top:-22px;
+}
+.c_text{
+    background:none;
+    font-size:15px;
+    position:relative;
+    top:-22px;
+    right:40px;
+}
+.s_text{
+    background:none;
+    font-size:15px;
+    position:relative;
+    top:-22px;
+    right:15px;
+}
+
+#mark_td{
+    text-align:right;
+}
+
+.mandatory{
+    background:#c7c7c7;
+    position:relative;
+    top:-40px;
+    right:5px;
+    width:20px;
+    height:20px;
+    border-radius:10px;
+    border : solid 1px rgb(228, 228, 228);
+}
+
+.cs{
+    background: #c7c7c7;
+    position: relative;
+    top: -36px;
+    right: 5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    border: solid 1px rgb(228, 228, 228);
+    display: none;
+}
+.cs_m{
+    background: #c7c7c7;
+    position: relative;
+    top: -36px;
+    right: 5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 10px;
+    border: solid 1px rgb(228, 228, 228);
+}
+
+.mandatory a{
+    font-weight:bold;
+}
+.mandatory_span{
+    background-color:#d0d0d0;
+}
+.mandatory_cont{
+    padding:0px;
+    height :36px;
+    margin:0px;
+}
+
+.show{
+    display: block;
+}

@@ -1,0 +1,157 @@
+header{
+    width:100%;
+    height:8%;
+}
+
+.header_wrap{
+    height:100%;
+    width:100%;
+    background-color: white;
+    display:flex;
+    flex-direction:row;
+}
+
+.title_wrap{
+    padding-left:40px;
+    padding-top:0px;
+}
+
+.title_wrap img{
+    margin-top:3px;
+    padding-left:40px;
+    padding-top:0px;
+}
+
+.login_wrap{
+    margin-left: auto;
+    padding-top:20px;
+    padding-right:40px;
+
+}
+
+.login_wrap button {
+    background-color: #0057b8; /* 버튼 배경 색상 변경 */
+    color: white; /* 텍스트 색상 변경 */
+}
+
+/*
+    side section
+*/
+body {
+    background-color: White; /* 아주 연한 파란색 */
+    color: white; /* 진한 파란색 */
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.area_section{
+    height:100%;
+    margin:0px;
+    padding-top:0px;
+    width:210px;
+    background-color : white;
+    display:flex;
+    justify-content: center;
+}
+
+.jobs_section{
+    height:100%;
+    margin:0px;
+    padding-top:0px;
+    width:210px;
+    background-color : white;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.area_section table,
+.jobs_section table{
+    text-align:center;
+    margin-top:0px;
+    border-collapse:collapse;
+    margin-top:0px;
+}
+.area_section table th,
+.jobs_section table th
+{
+    text-align : center;
+    font-size : 13px;
+    padding : 6px 10px;
+    border-right:none;
+    background-color: white;
+    height:50px;
+    color:#f1f1f1;
+}
+.area_section table th span,
+.jobs_section table th span
+{
+    height : 25px;
+    width : 110px;
+    border-radius: 4px;
+    background: #007bff;
+    box-shadow:  2px 2px 9px #007bff,
+    -2px -2px 9px #007bff;
+}
+
+.jobs_list{
+    overflow-y: scroll;
+    display:flex;
+    justify-content: center;
+}
+
+.area_section table td
+{
+    height:50px;
+    padding-top:10px;
+}
+
+.jobs_section table td
+{
+    height:40px;
+    padding-top:5px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.jobs_section table td:hover
+{
+    cursor:pointer;
+}
+
+.title:hover
+{
+    cursor:pointer;
+}
+
+
+.area_table img{
+    width:130px;
+}
+
+.area_table img:hover{
+    cursor:pointer;
+}
+
+.jobs{
+    text-align : center;
+}
+.jobs p{
+
+}
+.jobs button{
+    background-color : grey;
+}
+
+
+::-webkit-scrollbar { width: 6px; height:6px;} /* 스크롤 바 */
+
+::-webkit-scrollbar-track { background-color:whitesmoke; } /* 스크롤 바 밑의 배경 */
+
+::-webkit-scrollbar-thumb { background: #afb5bf; border-radius: 10px; } /* 실질적 스크롤 바 */
+
+::-webkit-scrollbar-thumb:hover { background: #afb5bf; } /* 실질적 스크롤 바 위에 마우스를 올려다 둘 때 */
+
+::-webkit-scrollbar-thumb:active { background: #afb5bf; } /* 실질적 스크롤 바를 클릭할 때 */
+
+::-webkit-scrollbar-button { display: none; } /* 스크롤 바 상 하단 버튼 */
+

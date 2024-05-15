@@ -1,0 +1,806 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Playfair+Display+SC:ital@1&display=swap');
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body,html{
+    margin:0px;
+    padding:0px;
+    height:100%;
+    box-sizing :border-box;
+    width:100%;
+    background: #F5F5F5;
+}
+
+.main_contents{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-left: 17%;
+    padding-top: 5%;
+    /* top: 1080px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    /* align-items: center; */
+    /* transform: matrix(1, 0, 0, -1, 0, 0);*/
+}
+
+.main_contents_title{
+    /* 제목-교과과정 편집 */
+
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    top: 5%;
+    left: 20%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.3rem;
+    line-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.content_box{
+    /* 흰 바탕 */
+    position: relative;
+    left: 6.5%;
+    width: 70%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgb(0 0 0 / 5%);
+    border-radius: 10px;
+
+    overflow: auto;
+}
+.admin_page_header{
+    display: flex;
+    flex-direction: row;
+    height: 5%;
+    padding-top: 28px;
+}
+.admin_page_title{
+    /* 디지털미디어 교과과정 편집 */
+
+    position: relative;
+    width: 70%;
+    height: 5%;
+    left: 3.4%;
+    top: 4%;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+table{
+    position: relative;
+    left: 3.4%;
+    top: 2%;
+    width: 93%;
+    align-items: center;
+    align-content: center;
+}
+
+tr:first-of-type > th {
+    height: 2rem;
+    background: #F4F4F4;
+    /* border:none; */
+    /* 폰트적용필요 */
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 2rem;
+    align-items: center;
+}
+
+th,td{
+    text-align:center;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+}
+.mil_btn{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 1rem;
+
+    color:#3462DC;
+    background: #FFFFFF;
+    border: 1px solid #3462DC;
+    border-radius: 4px;
+}
+.mil_add_btn{
+    position: absolute;
+    width: 10%;
+    top: 5.5%;
+    right: 3.7%;
+    border-radius: 0px;
+    color: #777777;
+    border-color: #777777;
+
+    font-family: 'Pretendard-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    padding: 0.2rem;
+}
+
+.mil_page_remove_btn{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 1rem;
+
+    color:red;
+    background: #FFFFFF;
+    border: 1px solid red;
+    border-radius: 4px;
+}
+/*----------팝업창------------*/
+
+.Modal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 85%;
+    height: 100%;
+    margin-left: 17%;
+    overflow: auto;
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.12); /* Black w/ opacity */
+    z-index:100000000;
+    opacity: 100%;
+}
+.Modal .page{
+    /* 팝업창-흰색 */
+    width: 60%;
+    height: 70%;
+    padding: 1% 2% 1% 2%;
+    margin: 7% auto auto 17%;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+}
+.close{
+    position: absolute;
+    margin-top: -3%;
+    margin-left: 60%;
+    align-content: end;
+    justify-content: flex-end;
+}
+.close span{
+    align-content: end;
+    justify-content: flex-end;
+    font-family: 'Pretendard-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
+
+.Modal .page .setting_title{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+/*--------------추가하기 Modal-------------------------------*/
+
+.bottom{
+    display: flex;
+}
+.mil_create_page_button{
+    width: 12%;
+    border-radius: 0px;
+    color: #777777;
+    border-color: #777777;
+
+    font-family: 'Pretendard-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    padding: 0.2rem;
+    align-content: center;
+    justify-content: center;
+    margin-left: 43%;
+}
+
+.mileditor_wrap .page .setting_table_wrap .mil_input{
+    width: 272.5px;
+    font-size: 40px;
+    background-color: transparent;
+    border: none;
+    border-bottom: #000000 1px solid;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.56rem;
+    line-height: 1rem;
+    align-items: center;
+    color: #A4A4A4;
+}
+
+.mileditor_wrap .page .setting_table_wrap .name{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+    align-items: center;
+    color: #000000;
+
+    padding-bottom: 10px;
+}
+.mileditor_wrap .page .setting_table_wrap .name .mil_input{
+    margin-left: 50px;
+}
+
+.mileditor_wrap .page .setting_table_wrap .slug{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+    align-items: center;
+    color: #000000;
+
+    padding-bottom: 10px;
+}
+.mileditor_wrap .page .setting_table_wrap .slug .mil_input{
+    margin-left: 26px;
+}
+.mileditor_wrap .page .setting_table_wrap .short-code{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+    align-items: center;
+    color: #000000;
+
+    padding-bottom: 10px;
+}
+.mileditor_wrap .page .setting_table_wrap .short-code .mil_input{
+    margin-left: 26px;
+}
+
+/*----------------------------------------------*/
+
+.mileditor_wrap .page .setting_table_wrap .row1{
+    display: flex;
+    padding-bottom: 10px;
+}
+.mileditor_wrap .page .setting_table_wrap .row2{
+    display: flex;
+    padding-bottom: 10px;
+}
+
+.mileditor_wrap .page .setting_table_wrap .mandatory{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+    align-items: center;
+    color: #000000;
+}
+.mileditor_wrap .page .setting_table_wrap .mandatory-color{
+    width: 205px;
+    margin-left: 50px;
+}
+.mileditor_wrap .page .setting_table_wrap .mandatory-color .view_color{
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid black;
+}
+.mileditor_wrap .page .setting_table_wrap .mandatory-color .mil_input{
+    width: 51px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+    padding-left: 7px;
+}
+.mileditor_wrap .page .setting_table_wrap .mandatory-color #explain1{
+    width: 205px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #A4A4A4;
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.mileditor_wrap .page .setting_table_wrap .mandatory-color .view_color{
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid black;
+}
+.mileditor_wrap .page .setting_table_wrap .mandatory-color .mil_input{
+    width: 51px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+    padding-left: 7px;
+}
+.mileditor_wrap .page .setting_table_wrap .mandatory-color #explain2{
+    width: 205px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #A4A4A4;
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+/*----------------------------------------------*/
+
+.mileditor_wrap .page .setting_table_wrap .core{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+    align-items: center;
+    color: #000000;
+}
+
+.mileditor_wrap .page .setting_table_wrap .core-color{
+    width: 205px;
+    margin-left: 50px;
+}
+.mileditor_wrap .page .setting_table_wrap .core-color .view_color{
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid black;
+}
+.mileditor_wrap .page .setting_table_wrap .core-color .mil_input{
+    width: 51px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+    padding-left: 7px;
+}
+.mileditor_wrap .page .setting_table_wrap .core-color #explain1{
+    width: 205px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #A4A4A4;
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.mileditor_wrap .page .setting_table_wrap .core-color .view_color{
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid black;
+}
+.mileditor_wrap .page .setting_table_wrap .core-color .mil_input{
+    width: 51px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+    padding-left: 7px;
+}
+.mileditor_wrap .page .setting_table_wrap .core-color #explain2{
+    width: 205px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #A4A4A4;
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+/*----------------------------------------------*/
+
+.mileditor_wrap .page .setting_table_wrap .support{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+    align-items: center;
+    color: #000000;
+}
+
+.mileditor_wrap .page .setting_table_wrap .support-color{
+    width: 205px;
+    margin-left: 66px;
+}
+.mileditor_wrap .page .setting_table_wrap .support-color .view_color{
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid black;
+}
+.mileditor_wrap .page .setting_table_wrap .support-color .mil_input{
+    width: 51px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+    padding-left: 7px;
+}
+.mileditor_wrap .page .setting_table_wrap .support-color #explain1{
+    width: 205px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #A4A4A4;
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.mileditor_wrap .page .setting_table_wrap .support-color .view_color{
+    width: 20px;
+    height: 20px;
+    border: 0.5px solid black;
+}
+.mileditor_wrap .page .setting_table_wrap .support-color .mil_input{
+    width: 51px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+
+    padding-left: 7px;
+}
+.mileditor_wrap .page .setting_table_wrap .support-color #explain2{
+    width: 205px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #A4A4A4;
+
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+/*----------------------------------------------*/
+
+.mileditor_wrap .page .setting_table_wrap .type{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+    align-items: center;
+    color: #000000;
+}
+.mileditor_wrap .page .setting_table_wrap .type-sort{
+    margin-left: 46px;
+}
+.mileditor_wrap .page .setting_table_wrap .type-sort label{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    align-items: center;
+    color: #000000;
+}
+.mileditor_wrap .page .setting_table_wrap .type-sort #explain1{
+    width: 210px;
+    height: 16px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #A4A4A4;
+
+    padding-top: 7px;
+    padding-bottom: 3px;
+}
+
+/*----------------------------------------------*/
+
+.mileditor_wrap .page .setting_table_wrap .row3{
+    display: flex;
+}
+
+.mileditor_wrap .page .setting_table_wrap .major-details{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+    align-items: center;
+    color: #000000;
+}
+.mileditor_wrap .page .setting_table_wrap .select{
+    margin-left: 38px;
+    display: column;
+}
+.mileditor_wrap .page .setting_table_wrap .select .selection{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.6rem;
+    line-height: 2rem;
+    align-items: center;
+    color: #000000;
+}
+.mileditor_wrap .page .setting_table_wrap .select span{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    align-items: center;
+    color: #A4A4A4;
+}
+
+/*-----------------과목등록 Modal--------------------*/
+
+#Modal_subject .setting_block{
+    /* 팝업창-흰색 */
+    width: 85%;
+    height: 80%;
+    padding: 3% 2% 1% 3%;
+    margin: 4% auto auto 5%;
+    justify-content: stretch;
+    align-items: stretch;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    overflow: auto;
+}
+#Modal_subject .setting_block .close{
+    position: absolute;
+    margin-left: 83%;
+    margin-top: -2.1%;
+}
+#Modal_subject .setting_block .setting_title{
+    height: 15px;
+    margin-top: 25px;
+}
+#Modal_subject .setting_block .subtitle{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.57rem;
+    line-height: 1rem;
+    align-items: center;
+    color: #A4A4A4;
+}
+#mil_subject_table{
+    width: 100%;
+    /* margin-left: -3.5%; */
+    margin-top: 35px;
+    justify-content: stretch;
+}
+#mil_subject_table thead{
+    width: 102px;
+    height: 20px;
+    background: #F4F4F4;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 0rem;
+    text-align: center;
+    color: #000000;
+}
+
+#mil_subject_table tbody{
+    width: 130px;
+    height: 30px;
+    border: 0.931223px solid #C2C2C2;
+    border-radius: 3.72489px;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.2rem;
+    line-height: 0rem;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+#mil_subject_table tbody td{
+    width: 102px;
+    height: 60px;
+    box-sizing: border-box;
+    border: 0.931223px solid #C2C2C2;
+    border-radius: 3.72489px;
+    cursor: pointer;
+    text-align:center;
+}
+
+#mil_subject_table span{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.5rem;
+    line-height: 0rem;
+    align-items: center;
+    text-align: center;
+    word-break: keep-all;
+    color: #000000;
+}
+
+/*-----------------------------------------*/
+.regidit_subject-type{
+    display: flex;
+    flex-direction: column;
+    justify-items: end;
+}
+.regidit_subject-type .setting_title{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.95rem;
+    line-height: 2rem;
+    align-items: center;
+    color: #000000;
+}
+.regidit_subject-type input{
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+    align-items: top;
+    color: #000000;
+}
+
+.regidit_subject-type button{
+    margin-bottom: 5px;
+    padding: 3px;
+}
+
+.regidit_subject-type .milpage_delete_type_button{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 1rem;
+
+    color:red;
+    background: #FFFFFF;
+    border: 1px solid red;
+    border-radius: 4px;
+}
+
+/*------------------------페이지 수정 모달--------------------------------*/
+.mil_modify_page_button{
+    width: 12%;
+    border-radius: 0px;
+    color: #777777;
+    border-color: #777777;
+
+    font-family: 'Pretendard-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.8rem;
+    padding: 0.2rem;
+    align-content: center;
+    justify-content: center;
+    margin-left: 43%;
+}

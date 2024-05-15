@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sql Mapper -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.starter.dao.amamDAO">
+	<!-- DAO의 메서드가 될 것이다. -->
+
+	<select id="videoList" resultType="com.spring.starter.model.videoDTO">
+				select * from industry_video order by thumbnail_url desc;
+		</select>
+	<!--<select id="industryList" resultType="ccom.spring.starter.model.industryDTO">
+				select * from mil_industry;
+		</select>-->
+
+	<select id="getVideoCode" resultType="com.spring.starter.model.videoViewDTO" parameterType="map">
+			select * from industry_video
+		<where>
+			<if test="value != null">AND video_link = #{videoCode} </if>
+		</where>
+	</select>
+
+</mapper>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sql Mapper -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.starter.dao.adminDAO">
+    <!-- DAO의 메서드가 될 것이다. -->
+
+    <select id="curriList" resultType="com.spring.starter.model.curriDTO">
+				select cp.id, ci.carrer_path_id, cp.small_category, ci.category
+				from linka.carrer_path cp
+                         inner join linka.carrer_id ci
+                                    on cp.large_category = ci.large_category
+				order by category desc, id;
+		</select>
+
+    <select id="deleteCurriculum" resultType="com.spring.starter.model.curriDTO">
+				delete from curriculum_admin
+        <where>
+            <if test="value != null">AND page_id = #{page_id} </if>
+        </where>
+	</select>
+
+
+    <!--
+    fil_position
+    -->
+
+    <insert id="addFePosition" >
+        INSERT INTO linka.fil_position( row_id,col_id,code) VALUES (#{row_id}, #{col_id}, #{code})
+    </insert>
+
+    <update id="updateFePosition" >
+        UPDATE linka.fil_position SET row_id=#{row_id}, col_id=#{col_id} WHERE code=#{code}
+    </update>
+
+    <delete id="deleteFePosition">
+        delete from linka.fil_position WHERE code=#{code}
+    </delete>
+
+    <!--
+    fe_subject
+    -->
+    <insert id="addFeSubject" >
+        INSERT INTO linka.fe_subject(code, name, detail, semester,is_mandatory,original_language) VALUES (#{code}, #{name}, #{detail}, #{semester}, #{is_mandatory}, #{original_language})
+    </insert>
+
+    <update id="updateFeSubject">
+        UPDATE linka.fe_subject SET name=#{name}, detail=#{detail}, semester=#{semester},is_mandatory=#{is_mandatory},original_language=#{original_language} WHERE code=#{code}
+    </update>
+
+    <delete id="deleteFeSubject">
+        delete from linka.fe_subject WHERE code=#{code}
+    </delete>
+
+    <!--
+    joint_departments
+    -->
+    <insert id="addJoint" >
+        INSERT INTO linka.joint_departments(code, joint_department) VALUES (#{code}, #{joint_department})
+    </insert>
+
+    <update id="updateJoint">
+        UPDATE linka.joint_departments SET joint_department=#{joint_department} WHERE code=#{code}
+    </update>
+
+    <delete id="deleteJoint">
+        delete from linka.joint_departments WHERE code=#{code} AND joint_department=#{joint_department}
+    </delete>
+    <!--
+    relate_subjects
+    -->
+    <insert id="addRelate" >
+        INSERT INTO linka.relate_subjects(code, relate_subject_code) VALUES (#{code}, #{relate_subject_code})
+    </insert>
+
+    <update id="updateRelate">
+        UPDATE linka.relate_subjects SET relate_subject_code=#{relate_subject_code} WHERE code=#{code}
+    </update>
+    <delete id="deleteRelate">
+        delete from linka.relate_subjects WHERE code=#{code} AND relate_subject_code=#{relate_subject_code}
+    </delete>
+    <!--
+    prerequisite_subjects
+    -->
+    <insert id="addPrerequisite" >
+        INSERT INTO linka.prerequisite_subjects(code, pre_subject_code) VALUES (#{code}, #{pre_subject_code})
+    </insert>
+
+    <update id="updatePrerequisite">
+        UPDATE linka.prerequisite_subjects SET pre_subject_code=#{pre_subject_code} WHERE code=#{code}
+    </update>
+
+    <delete id="deletePrerequisite">
+        delete from linka.Prerequisite WHERE code=#{code} AND pre_subject_code=#{pre_subject_code}
+    </delete>
+
+</mapper>

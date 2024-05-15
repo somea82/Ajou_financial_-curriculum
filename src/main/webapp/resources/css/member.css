@@ -1,0 +1,68 @@
+@import url("common.css");
+
+*{
+    box-sizing :border-box;
+}
+
+body,html{
+    margin:0px;
+    padding:0px;
+    height:100%;
+    box-sizing :border-box;
+}
+
+.main_contents{
+    display:flex;
+    position:relative;
+    height:92%;
+    min-width: 1400px;
+    flex-direction: row;
+    justify-content : center;
+    align-items : center;
+    background-color: #f5f5f5;
+}
+
+span{
+    width: 500px;
+    height: 401px;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 8px #d0d0d0, -2px -2px 8px #ffffff;
+    display: table-cell;
+    vertical-align: middle;
+    margin: 0px 30px 0px 30px;
+    display: flex;
+    /*justify-content: center;*/
+    flex-direction: column;
+    padding: 40px 120px;
+    position:relative;
+}
+
+p
+{
+	text-align:center;
+}
+
+.title{
+	font-size:15pt;
+	font-weight:600;
+}
+
+.login_input{
+	margin:10px 2px;
+	height:40px;
+}
+
+.login_others{
+	font-size:12pt;
+}
+
+.login_but{
+	background-color:#3462DC;
+	height:40px;
+	color:white;
+	outline:none;
+	border-radius:5px;
+}
+
+

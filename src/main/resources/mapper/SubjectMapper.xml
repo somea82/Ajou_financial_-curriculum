@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sql Mapper -->
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.starter.dao.cilDAO">
+
+	<select id="subjectAllList" resultType="com.spring.starter.model.adminSubjectDTO">
+		select *
+		from linka.fe_subject
+	</select>
+
+	<select id="subjectPreList" resultType="com.spring.starter.model.cilPreDTO" parameterType="map">
+		select sub.code as main_subject, psub.pre_subject_code as main_pre_subject
+		from linka.fe_subject sub
+		join linka.prerequisite_subjects psub
+		on sub.code = psub.code
+		<where>
+			<if test="value != null">AND sub.code = #{subject} </if>
+		</where>
+	</select>
+
+	<select id="subjectTrackList" resultType="com.spring.starter.model.cilTrackDTO"  parameterType="map">
+		select fp.col_id ,fp.row_id ,fp.code, cps.carrer_path_id,cps.small_category, cps.type, ci.category
+		from linka.fil_position fp
+		    join linka.carrer_path_subjects cps
+		on fp.code = cps.subject_code
+			left join linka.carrer_id ci
+		on ci.carrer_path_id = cps.carrer_path_id
+		<where>
+			<if test="carrer_path_id != null">AND cps.carrer_path_id = #{carrer_path_id}</if>
+			<if test="small_category != null">AND (cps.type = "core" OR (cps.type = "support" AND cps.small_category = #{small_category}))</if>
+		</where>
+	</select>
+
+	<select id="subjectList" resultType="com.spring.starter.model.filDTO">
+		select fp.*,fs.name,fs.is_mandatory
+		from linka.fil_position fp
+				 inner join linka.fe_subject fs
+							on fp.code = fs.code
+		order by fp.row_id, fp.col_id;
+	</select>
+
+	<select id="mathList" resultType="com.spring.starter.model.mathDTO">
+		select fp.*,fs.name,fs.is_math
+		from linka.fil_position fp
+				 inner join linka.fe_subject fs
+							on fp.code = fs.code
+		where fs.is_math = 1
+		order by fp.row_id, fp.col_id;
+	</select>
+
+	<select id="jobList" resultType="com.spring.starter.model.jobDTO">
+		select jobs.small_category, ci.carrer_path_id , ci.core_color, ci.support_color
+		from linka.carrer_path jobs
+			inner join linka.carrer_id ci
+				on jobs.large_category = ci.large_category
+		where ci.category = "job"
+		<where>
+			<if test="value != null"></if>
+		</where>
+	</select>
+
+	<select id="majorList" resultType="com.spring.starter.model.majorDTO">
+		select majors.small_category, ci.carrer_path_id, ci.core_color, ci.support_color
+		from linka.carrer_path majors
+			inner join linka.carrer_id ci
+				on majors.large_category = ci.large_category
+		where ci.category = "major"
+		<where>
+			<if test="value != null"></if>
+		</where>
+	</select>
+
+	<select id="subjectDetailList" resultType="com.spring.starter.model.cilDetailDTO" parameterType="map">
+		select main.id, main.name, main.code, main. detail, main.semester, main.is_mandatory, main.original_language, main.joint_department,ffs.code as pre_subject_code,ffs.name as pre_subject_name ,sfs.code as relate_subject_code,sfs.name as relate_subject_name
+		from (
+			select fs.*, jd.joint_department , ps.pre_subject_code , rs.relate_subject_code
+			from linka.fe_subject fs
+				left join linka.joint_departments jd
+					on fs.code = jd.code
+				left join linka.prerequisite_subjects ps
+					on fs.code = ps.code
+				left join linka.relate_subjects rs
+					on fs.code = rs.code) as main
+			left join linka.fe_subject ffs
+				on main.pre_subject_code = ffs.code
+			left join linka.fe_subject sfs
+				on main.relate_subject_code = sfs.code
+		<where>
+			<if test="value != null">AND main.code = #{code} </if>
+		</where>
+	</select>
+
+	<select id="subjectPositionList" resultType="com.spring.starter.model.cilPositionDTO" parameterType="map">
+		select *
+		from linka.fil_position fp
+		<where>
+			<if test="value != null">AND fp.code = #{code} </if>
+		</where>
+	</select>
+</mapper>

@@ -1,0 +1,210 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Playfair+Display+SC:ital@1&display=swap');
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body,html{
+    margin:0px;
+    padding:0px;
+    height:100%;
+    box-sizing :border-box;
+    width:100%;
+    background: #F5F5F5;
+}
+
+.setting_mentor_video_wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-left: 17%;
+    padding-top: 5%;
+    /* top: 1080px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    /* align-items: center; */
+    /* transform: matrix(1, 0, 0, -1, 0, 0);*/
+}
+
+.form_title{
+    /* 제목- 전문가영상관리 */
+
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    top: 6%;
+    left: 44.3%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+#setting_mentor_video{
+    /* 흰 바탕 */
+    position: relative;
+    top: 0%;
+    left: 6.5%;
+    width: 70%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgb(0 0 0 / 5%);
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.form_subtitle{
+    position: relative;
+    width: 70%;
+    height: 5%;
+    left: 5%;
+    top: 4%;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.row{
+    position: relative;
+    left: 5%;
+    top: 5%;
+    width: 93%;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: row;
+}
+
+.row .input-addon{
+    width: 160px;
+    height: 27px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.select-addon{
+    width: 190px;
+    height: 30px;
+    background: #FFFFFF;
+    border: 1.22111px solid #000000;
+    border-radius: 3.66332px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.7rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+input{
+    width: 40%;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: #000000 1px solid;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.56rem;
+    line-height: 1rem;
+    align-items: center;
+    color: #A4A4A4;
+}
+
+.column{
+    width: 46.5%;
+    display: flex;
+    flex-direction: column;
+}
+.description{
+    height: 16px;
+    padding-left: 50px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.25rem;
+    line-height: 0rem;
+    display: flex;
+    align-items: center;
+    color: #A4A4A4;
+}
+
+#job_select_form{
+    display: flex;
+}
+
+#job1{
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+#job2{
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+#job3{
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+
+.create_mentor_video_button{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.70rem;
+    line-height: 1rem;
+
+    color:#FFFFFF;
+    background: #3462DC;
+    border: 1px solid #3462DC;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    width: 150px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 0px;
+    margin-left: 650px;
+}
+
+/*
+비디오 썸네일 이미지
+*/
+.thumbnail_uploaded {
+    width: 50%;
+    display: block;
+    margin: 15px auto;
+}

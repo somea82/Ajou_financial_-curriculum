@@ -1,0 +1,288 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Playfair+Display+SC:ital@1&display=swap');
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+body,html{
+    margin:0px;
+    padding:0px;
+    height:100%;
+    box-sizing :border-box;
+    width:100%;
+    background: #F5F5F5;
+}
+
+.setting_block{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    padding-left: 17%;
+    padding-top: 5%;
+    /* top: 1080px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    /* align-items: center; */
+    /* transform: matrix(1, 0, 0, -1, 0, 0);*/
+}
+
+.setting_block_title{
+    /* 제목-과목 편집 */
+
+    position: absolute;
+    width: 60%;
+    height: 10%;
+    top: 5%;
+    left: 20%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.3rem;
+    line-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+.setting_block_content{
+    display: flex;
+    flex-direction: row;
+}
+
+.setting_block_left{
+    /* 흰 바탕 */
+    position: relative;
+    top: 10%;
+    left: 6.5%;
+    width: 50%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgb(0 0 0 / 5%);
+    border-radius: 10px;
+    overflow: auto;
+}
+.setting_block_left .setting_title{
+    /*Subject List*/
+    position: relative;
+    width: 60%;
+    height: 5%;
+    left: 5%;
+    top: 4%;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+#mil_subject_table{
+    width: 90%;
+    height: 90%;
+    margin-left: 5%;
+    margin-top: 35px;
+}
+
+#mil_subject_table thead{
+    width: 102px;
+    height: 20px;
+    background: #F4F4F4;
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 0rem;
+    text-align: center;
+    color: #000000;
+}
+
+#mil_subject_table tbody td{
+    position: relative;
+    width: 130px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 0.931223px solid #C2C2C2;
+    border-radius: 3.72489px;
+}
+#mil_subject_table span{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.2rem;
+    line-height: 0.9rem;
+    align-items: center;
+    text-align: center;
+    word-break: keep-all;
+    color: #000000;
+}
+
+#mil_subject_table thead>tr,td{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 0.9rem;
+    text-align: center;
+    color: #000000;
+}
+
+/*----------------------------------------------------*/
+.setting_block_right{
+    position: relative;
+    top: 10%;
+    left: 6.5%;
+    width: 23%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 12px rgb(0 0 0 / 5%);
+    border-radius: 10px;
+    overflow: auto;
+}
+#mil_create_subject_form{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.setting_block_right .setting_title{
+    /*Subject Info*/
+    position: relative;
+    width: 60%;
+    height: 5%;
+    left: 5%;
+    top: 4%;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.95rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.setting_table_wrap{
+    width: 90%;
+    height: 100%;
+    padding-left: 5%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.setting_table_wrap table{
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.setting_table_wrap tr{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.setting_table_wrap th{
+    /*명칭*/
+    position: absolute;
+    width: 30%;
+    height: 10px;
+    margin-right: 10px;
+    justify-content: left;
+    text-align: left;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.76rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+.setting_table_wrap input{
+    width: 63%;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: none;
+    border-bottom: #000000 1px solid;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.56rem;
+    line-height: 1rem;
+    align-items: center;
+    color: #A4A4A4;
+}
+#major{
+    width: 5%;
+    margin-bottom: 0px;
+}
+
+.mil_btn{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.70rem;
+    line-height: 1rem;
+    padding: 0.3rem 0.5rem 0.3rem 0.5rem;
+
+    color:#3462DC;
+    background: #FFFFFF;
+    border: 1px solid #3462DC;
+    border-radius: 4px;
+}
+.get_subject_info_by_name_button{
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 0.70rem;
+    line-height: 1rem;
+
+    color:#3462DC;
+    background: #FFFFFF;
+    border: 1px solid #3462DC;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+.description{
+    /* position: relative; */
+    height: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+
+    font-family: 'Noto Sans KR';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.25rem;
+    line-height: 1rem;
+    display: flex;
+    align-items: center;
+    color: #A4A4A4;
+}
+.mil_input_select{
+    width: 50%;
+    margin-left: 30px;
+}

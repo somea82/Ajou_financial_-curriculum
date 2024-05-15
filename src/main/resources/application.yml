@@ -1,0 +1,99 @@
+spring:
+
+  datasource:
+    #    TODO AWS RDS
+    driver-class-name: org.mariadb.jdbc.Driver
+    jdbc-url: jdbc:mariadb://ajoufe.iptime.org:3306/linka
+    username: Ajou
+
+    password: 0i!gx8D4uD5gRJdS
+    mapper-locations: classpath*:mapper/*.xml
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+
+
+  #    #TODO 효택 태석
+#    password: 1234
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    password: 1234
+#    url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+#    url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true
+#    username: root
+#
+#    driver-class-name: org.mariadb.jdbc.Driver
+#    password: 1128
+#    url: jdbc:mariadb://localhost:3306/ajou_test?characterEncoding=UTF-8&serverTimezone=UTC
+#    username: myadmin
+
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+  sql:
+    init:
+      mode: always
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ajouwithme@gmail.com
+    password: ENC(vtQWfKf0nw1YGMvjUcLctu9uuUmZYp8fLC1FdbEqOho=)
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+logging:
+  level:
+    org:
+      springframework:
+        web:
+          filter: DEBUG
+      hibernate.type: trace
+
+jwt:
+  secret: ENC(ZDLPHyvd1oCQRuos3ITfyhXrM8SmFiFiXCrYj0y3jSIAafMLCSW5RfCAT1xhrq/73tWvWyEIDNT6TVkaDKDI2nc30GUTA1fjnPDjCwelhQAANthObehUXQx7nb21q7gNo1gvKIkQo+4x5LQfJOm5zg==)
+
+jasypt:
+  encryptor:
+    bean: jasyptStringEncryptor
+
+cloud:
+  aws:
+    credentials:
+      access-key: ENC(Swj3haOS9jcyB08HXkM3unIunc3JBPK4hjFC3lLQq1U=)
+      secret-key: ENC(D2Tbkf6wQUvg9ipCy5h98AbsGADv3aGGmFJNtd8HjYYtgrxv+fGmZKxJwlTrbCFxDjaNtVzINck=)
+    s3:
+      bucket: ENC(jCRxzrwjPMv73k/XzDO0zmI+fexLqKvC)
+    region:
+      static: ap-northeast-2
+    stack:
+      auto: false
+mybatis:
+  mapper-locations: classpath*:**/mapper/*.xml
+aws:
+  url: ENC(QMJHMtd99HzShOywqzyzDE1MlC+avhqYkkNboHbJv7luNojIFgIkJItQxu+P0shxnZCs4tAG+uFShIgor+Q+hw==)
+
+---
+
+spring:
+  config:
+    activate:
+      on-profile: "prod"
+
+

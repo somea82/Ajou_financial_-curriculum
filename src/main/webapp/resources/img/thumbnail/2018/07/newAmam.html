@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=1920">
+    <title>AMAM | MEDIA-INDUSTRY LINK</title>
+    <link rel="stylesheet" type="text/css"
+          href="http://media-jobs.ajou.ac.kr/wordpress/wp-content/themes/mil_theme/style.css"/>
+    <link rel="alternate" href="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/rss.php"
+          type="application/rss+xml" title="MEDIA-INDUSTRY LINK &raquo; KBoard 통합 피드">
+
+    <link rel='dns-prefetch' href='//code.jquery.com'>
+    <link rel='dns-prefetch' href='//ajax.googleapis.com'>
+    <link rel='dns-prefetch' href='//s.w.org'>
+    <link rel="alternate" type="application/rss+xml" title="MEDIA-INDUSTRY LINK &raquo; 피드"
+          href="http://media-jobs.ajou.ac.kr/wordpress/feed/"/>
+    <link rel="alternate" type="application/rss+xml" title="MEDIA-INDUSTRY LINK &raquo; 댓글 피드"
+          href="http://media-jobs.ajou.ac.kr/wordpress/comments/feed/"/>
+    <link rel='stylesheet' id='kboard-skin-amam-css'
+          href='http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/style.css?ver=5.2'
+          type='text/css' media='all'/>
+    <link rel='stylesheet' id='kboard-editor-media-css'
+          href='http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/template/css/editor_media.css?ver=5.2'
+          type='text/css' media='all'/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css"
+          integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <script type='text/javascript'>
+        var kboard_comments_localize_strings = {
+            "reply": "\ub2f5\uae00",
+            "cancel": "\ucde8\uc18c",
+            "please_enter_the_author": "\uc791\uc131\uc790\uba85\uc744 \uc785\ub825\ud574\uc8fc\uc138\uc694.",
+            "please_enter_the_password": "\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud574\uc8fc\uc138\uc694.",
+            "please_enter_the_CAPTCHA": "\ubcf4\uc548\ucf54\ub4dc\ub97c \uc785\ub825\ud574\uc8fc\uc138\uc694.",
+            "please_enter_the_content": "\ub0b4\uc6a9\uc744 \uc785\ub825\ud574\uc8fc\uc138\uc694.",
+            "are_you_sure_you_want_to_delete": "\uc0ad\uc81c \ud558\uc2dc\uaca0\uc2b5\ub2c8\uae4c?"
+        };
+    </script>
+    <script type='text/javascript'
+            src='http://media-jobs.ajou.ac.kr/wordpress/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+    <script type='text/javascript'
+            src='http://media-jobs.ajou.ac.kr/wordpress/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+    <link rel='https://api.w.org/' href='http://media-jobs.ajou.ac.kr/wordpress/wp-json/'/>
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
+          href="http://media-jobs.ajou.ac.kr/wordpress/wp-includes/wlwmanifest.xml"/>
+    <meta name="generator" content="WordPress 4.6"/>
+    <link rel="canonical" href="http://media-jobs.ajou.ac.kr/wordpress/amam/"/>
+    <link rel='shortlink' href='http://media-jobs.ajou.ac.kr/wordpress/?p=189'/>
+    <link rel="alternate" type="application/json+oembed"
+          href="http://media-jobs.ajou.ac.kr/wordpress/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fmedia-jobs.ajou.ac.kr%2Fwordpress%2Famam%2F"/>
+    <link rel="alternate" type="text/xml+oembed"
+          href="http://media-jobs.ajou.ac.kr/wordpress/wp-json/oembed/1.0/embed?url=http%3A%2F%2Fmedia-jobs.ajou.ac.kr%2Fwordpress%2Famam%2F&#038;format=xml"/>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+            display: inline !important;
+            border: none !important;
+            box-shadow: none !important;
+            height: 1em !important;
+            width: 1em !important;
+            margin: 0 .07em !important;
+            vertical-align: -0.1em !important;
+            background: none !important;
+            padding: 0 !important;
+        }
+
+        #kboard-default-list {
+            margin: 30px 0 30px 0;
+        }
+
+        .inter-nav {
+            width: 100%;
+            display: flex;
+        }
+
+        .inter-nav__content {
+            flex: 1;
+            background: #555;
+            border: 1px solid #eee;
+            height: 35px;
+            line-height: 35px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #eee;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .inter-nav__content:hover {
+            background: #444;
+        }
+
+        .inter-nav__content:active {
+            background: #777;
+        }
+
+        .inter-nav__content.selected {
+            background: #F8AD40;
+            color: black;
+        }
+
+        .inter-nav__content.selected:hover {
+            background: #E89D30;
+        }
+
+        .inter-nav__content.selected:active {
+            background: #FFBD50;
+        }
+
+        .containerWrapper {
+            position: relative;
+        }
+
+        #surveyContainer {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 500px;
+            visibility: hidden;
+        }
+
+        .survey-content-list {
+            margin: 32px auto;
+            width: 800px;
+        }
+
+        .survey-content-list > .survey {
+            font-size: 16px;
+            line-height: 24px;
+            margin: 48px 0;
+            padding: 0 0 12px 0;
+            border-bottom: 1px solid #aaa;
+        }
+
+        .survey-content-list > .survey > .summaryText {
+            display: inline;
+        }
+
+        .survey-content-list > .survey .interviewee_name {
+            font-weight: 600;
+            display: inline;
+        }
+
+        .fullText {
+            display: none;
+        }
+
+        .moreButton {
+            display: inline;
+            position: relative;
+            bottom: 0;
+            float: right;
+            font-size: 14px;
+            color: #111;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .moreButton:hover {
+            color: #CD5817;
+        }
+
+        .moreButton:active {
+            color: #FD8827;
+        }
+
+    </style>
+</head>
+<div id="wrap" class="hfeed">
+    <div id="header_wrap">
+        <header id="header" role="banner">
+            <section id="homepage_title">
+                <a href="http://media-jobs.ajou.ac.kr/wordpress/"><img
+                        src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/themes/mil_theme/images/Resource/01_Home/MIL_logo.png"
+                        alt="MEDIA-INDUSTRY LINK"/></a>
+            </section>
+            <nav id="main_nav" role="navigation">
+                <div class="menu-a_main_menu-container">
+                    <ul id="menu-a_main_menu" class="menu">
+                        <li id="menu-item-318"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-318"><a
+                                href="/wordpress">HOME</a></li>
+                        <li id="menu-item-487"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-487">
+                            <a href="?open_side=false">CIL</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-501"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-501"><a
+                                        href="http://media-jobs.ajou.ac.kr/wordpress/media_contents/">Degital Media</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-491"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-491"><a
+                                href="?open_side=true">INDUSTRY-INSIGHT</a></li>
+                        <li id="menu-item-259"
+                            class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-189 current_page_item menu-item-259">
+                            <a href="http://media-jobs.ajou.ac.kr/wordpress/amam/">AMAM</a></li>
+                        <li id="menu-item-319"
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-319"><a
+                                href="https://ko.surveymonkey.com/r/3JYQSR6">SURVEY</a></li>
+                        <li><a href="http://media-jobs.ajou.ac.kr/wordpress/login">LOGIN</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+    </div>
+</div>
+<hr>
+<div class="inter-nav">
+    <div class="inter-nav__content selected" id="showQnaButton">재학생이 묻고 졸업생이 답한다 !</div>
+    <div class="inter-nav__content" id="showSurveyButton">현직 선배의 조언</div>
+</div>
+<div class="containerWrapper">
+    <div id="qnaContainer">
+        <div class="left-block-for-centering"></div>
+        <div id="content_wrap">
+            <section id="content" role="main">
+                <article id="post-189" class="post-189 page type-page status-publish hentry">
+                    <section class="entry-content">
+                        <div id="kboard-default-list">
+                            <form id="kboard-search-form" method="get" action="/wordpress/amam/">
+                                <!-- 리스트 시작 -->
+                                <div class="kboard-list">
+                                    <div class="kboard-category">
+                                        <select name="category1" onchange="jQuery('#kboard-search-form').submit();">
+                                            <option value="">전체 분야 (Select area)</option>
+                                            <option value="게임">게임</option>
+                                            <option value="디지털디자인">디지털디자인</option>
+                                            <option value="디지털필름">디지털필름</option>
+                                            <option value="IT프로그래밍">IT프로그래밍</option>
+                                            <option value="컨버전스테크">컨버전스테크</option>
+                                        </select>
+                                    </div>
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <td class="kboard-list-uid">No.</td>
+                                            <td class="kboard-list-area">Area</td>
+                                            <td class="kboard-list-title">Title</td>
+                                            <td class="kboard-list-user">Post by</td>
+                                            <td class="kboard-list-date">Date</td>
+                                            <td class="kboard-list-view">Hit</td>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="kboard-list-uid">14</td>
+                                            <td class="kboard-list-area">디지털디자인</td>
+                                            <!-- category1 is AREA selection -->
+                                            <td class="kboard-list-title">
+                                                <a href="/wordpress/amam/?uid=115&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        웹디자이너는 어느정도로 포토샵이나 일러스트를 다뤄야 하는지 궁금합니다.
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 박준영</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2018.02.03</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 238</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">박준영</td>
+                                            <td class="kboard-list-date">2018.02.03</td>
+                                            <td class="kboard-list-view">238</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=116&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:웹디자이너는 어느정도로 포토샵이나 일러스트를 다뤄야 하는지 궁금합니다.
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 우주_이혜명</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2018.02.03</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 237</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">우주_이혜명</td>
+                                            <td class="kboard-list-date">2018.02.03</td>
+                                            <td class="kboard-list-view">237</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=117&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:웹디자이너는 어느정도로 포토샵이나 일러스트를 다뤄야 하는지 궁금합니다.
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 앨리스원더랩_김지환</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2018.02.05</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 197</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">앨리스원더랩_김지환</td>
+                                            <td class="kboard-list-date">2018.02.05</td>
+                                            <td class="kboard-list-view">197</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=118&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:웹디자이너는 어느정도로 포토샵이나 일러스트를 다뤄야 하는지 궁금합니다.
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 앨리스원더랩_이사무엘</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2018.02.05</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 173</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">앨리스원더랩_이사무엘</td>
+                                            <td class="kboard-list-date">2018.02.05</td>
+                                            <td class="kboard-list-view">173</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=119&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:웹디자이너는 어느정도로 포토샵이나 일러스트를 다뤄야 하는지 궁금합니다.
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 프리랜서_강창혁</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2018.02.07</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 176</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">프리랜서_강창혁</td>
+                                            <td class="kboard-list-date">2018.02.07</td>
+                                            <td class="kboard-list-view">176</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid">13</td>
+                                            <td class="kboard-list-area">디지털필름</td> <!-- category1 is AREA selection -->
+                                            <td class="kboard-list-title">
+                                                <a href="/wordpress/amam/?uid=110&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        교육 콘텐츠를 제작하고싶습니다
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 박성아</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2018.01.23</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 152</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">박성아</td>
+                                            <td class="kboard-list-date">2018.01.23</td>
+                                            <td class="kboard-list-view">152</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=112&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:교육 콘텐츠를 제작하고싶습니다 (1)
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> DFlab_김예람</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2018.01.26</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 192</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">DFlab_김예람</td>
+                                            <td class="kboard-list-date">2018.01.26</td>
+                                            <td class="kboard-list-view">192</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid">12</td>
+                                            <td class="kboard-list-area">디지털필름</td> <!-- category1 is AREA selection -->
+                                            <td class="kboard-list-title">
+                                                <a href="/wordpress/amam/?uid=109&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        3D애니메이션 및 업계 등등.. (1)
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 김대용</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.10.20</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 416</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">김대용</td>
+                                            <td class="kboard-list-date">2017.10.20</td>
+                                            <td class="kboard-list-view">416</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid">11</td>
+                                            <td class="kboard-list-area">디지털필름</td> <!-- category1 is AREA selection -->
+                                            <td class="kboard-list-title">
+                                                <a href="/wordpress/amam/?uid=98&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        미디어 학과를 나온 후의 진로에 대한 고민
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 김태홍</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.28</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 408</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">김태홍</td>
+                                            <td class="kboard-list-date">2017.07.28</td>
+                                            <td class="kboard-list-view">408</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid">10</td>
+                                            <td class="kboard-list-area">디지털디자인</td>
+                                            <!-- category1 is AREA selection -->
+                                            <td class="kboard-list-title">
+                                                <a href="/wordpress/amam/?uid=91&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        디자인 관련 취직시 준비해두면 좋은 것
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 전현아</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.19</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 293</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">전현아</td>
+                                            <td class="kboard-list-date">2017.07.19</td>
+                                            <td class="kboard-list-view">293</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=92&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:디자인 관련 취직시 준비해두면 좋은 것
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 프리랜서_강창혁</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.20</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 305</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">프리랜서_강창혁</td>
+                                            <td class="kboard-list-date">2017.07.20</td>
+                                            <td class="kboard-list-view">305</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=96&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:디자인 관련 취직시 준비해두면 좋은 것
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> LG전자_전봉정</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.23</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 315</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">LG전자_전봉정</td>
+                                            <td class="kboard-list-date">2017.07.23</td>
+                                            <td class="kboard-list-view">315</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=97&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:디자인 관련 취직시 준비해두면 좋은 것
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 우주_이혜명</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.24</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 293</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">우주_이혜명</td>
+                                            <td class="kboard-list-date">2017.07.24</td>
+                                            <td class="kboard-list-view">293</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=104&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:디자인 관련 취직시 준비해두면 좋은 것
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 앨리스원더랩_이사무엘</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.08.08</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 259</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">앨리스원더랩_이사무엘</td>
+                                            <td class="kboard-list-date">2017.08.08</td>
+                                            <td class="kboard-list-view">259</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid">9</td>
+                                            <td class="kboard-list-area">디지털필름</td> <!-- category1 is AREA selection -->
+                                            <td class="kboard-list-title">
+                                                <a href="/wordpress/amam/?uid=90&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        영화에 쓰이는 CG를 배우고 싶은데 학교 교과과정 이외로 따로 배울 수 있는 곳이 있나요?
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 추다연</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.19</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 266</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">추다연</td>
+                                            <td class="kboard-list-date">2017.07.19</td>
+                                            <td class="kboard-list-view">266</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=94&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:영화에 쓰이는 CG를 배우고 싶은데 학교 교과과정 이외로 따로 배울 수 있는 곳이 있나요?
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> scanlineVFX_이시내</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.20</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 379</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">scanlineVFX_이시내</td>
+                                            <td class="kboard-list-date">2017.07.20</td>
+                                            <td class="kboard-list-view">379</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid">8</td>
+                                            <td class="kboard-list-area">IT프로그래밍</td>
+                                            <!-- category1 is AREA selection -->
+                                            <td class="kboard-list-title">
+                                                <a href="/wordpress/amam/?uid=87&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        데이터 시각화
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 위혜린</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.19</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 279</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">위혜린</td>
+                                            <td class="kboard-list-date">2017.07.19</td>
+                                            <td class="kboard-list-view">279</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=93&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:데이터 시각화
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 스마일게이트_이정연</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.20</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 353</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">스마일게이트_이정연</td>
+                                            <td class="kboard-list-date">2017.07.20</td>
+                                            <td class="kboard-list-view">353</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid">7</td>
+                                            <td class="kboard-list-area">디지털필름</td> <!-- category1 is AREA selection -->
+                                            <td class="kboard-list-title">
+                                                <a href="/wordpress/amam/?uid=80&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        앞으로의 진로와 수강신청
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 황지환</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.16</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 319</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">황지환</td>
+                                            <td class="kboard-list-date">2017.07.16</td>
+                                            <td class="kboard-list-view">319</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=83&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:앞으로의 진로와 수강신청
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 프리랜서_이대현</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.16</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 276</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">프리랜서_이대현</td>
+                                            <td class="kboard-list-date">2017.07.16</td>
+                                            <td class="kboard-list-view">276</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=86&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:앞으로의 진로와 수강신청
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> Redrover_허홍석</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.17</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 268</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">Redrover_허홍석</td>
+                                            <td class="kboard-list-date">2017.07.17</td>
+                                            <td class="kboard-list-view">268</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=95&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:앞으로의 진로와 수강신청
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> scanlineVFX_이시내</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.20</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 245</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">scanlineVFX_이시내</td>
+                                            <td class="kboard-list-date">2017.07.20</td>
+                                            <td class="kboard-list-view">245</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid">6</td>
+                                            <td class="kboard-list-area">디지털필름</td> <!-- category1 is AREA selection -->
+                                            <td class="kboard-list-title">
+                                                <a href="/wordpress/amam/?uid=78&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        CG 관련 직업을 갖기 위해 준비해야할 것!
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 김혜윤</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.13</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 308</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">김혜윤</td>
+                                            <td class="kboard-list-date">2017.07.13</td>
+                                            <td class="kboard-list-view">308</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=79&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:CG 관련 직업을 갖기 위해 준비해야할 것!
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 아주대 DFlab_강정화</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.14</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 328</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">아주대 DFlab_강정화</td>
+                                            <td class="kboard-list-date">2017.07.14</td>
+                                            <td class="kboard-list-view">328</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=84&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:CG 관련 직업을 갖기 위해 준비해야할 것!
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 프리랜서_이대현</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.16</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 291</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">프리랜서_이대현</td>
+                                            <td class="kboard-list-date">2017.07.16</td>
+                                            <td class="kboard-list-view">291</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=85&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:CG 관련 직업을 갖기 위해 준비해야할 것!
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> Redrover_허홍석</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.07.16</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 262</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">Redrover_허홍석</td>
+                                            <td class="kboard-list-date">2017.07.16</td>
+                                            <td class="kboard-list-view">262</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid">5</td>
+                                            <td class="kboard-list-area">IT프로그래밍</td>
+                                            <!-- category1 is AREA selection -->
+                                            <td class="kboard-list-title">
+                                                <a href="/wordpress/amam/?uid=75&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        취업진로
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 이주한</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.04.06</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 328</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">이주한</td>
+                                            <td class="kboard-list-date">2017.04.06</td>
+                                            <td class="kboard-list-view">328</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="kboard-list-uid"></td>
+                                            <td class="kboard-list-area"></td>
+                                            <td class="kboard-list-title" style="padding-left:0px">
+                                                <a href="/wordpress/amam/?uid=77&mod=document">
+                                                    <div class="kboard-default-cut-strings">
+                                                        <img src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-reply.png"
+                                                             alt="">
+                                                        Re:취업진로
+                                                    </div>
+                                                    <div class="kboard-mobile-contents">
+                                                    <span class="contents-item"><img
+                                                            src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-user.png"
+                                                            alt="작성자"> 애플파이 스튜디오_강호경</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-date.png"
+                                                                alt="작성일"> 2017.04.08</span>
+                                                        <span class="contents-item"><img
+                                                                src="http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/skin/amam/images/icon-view.png"
+                                                                alt="조회"> 320</span>
+                                                    </div>
+                                                </a>
+                                            </td>
+                                            <td class="kboard-list-user">애플파이 스튜디오_강호경</td>
+                                            <td class="kboard-list-date">2017.04.08</td>
+                                            <td class="kboard-list-view">320</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- 리스트 끝 -->
+
+                                <!-- 페이징 시작 -->
+                                <div class="kboard-pagination">
+                                    <ul class="kboard-pagination-pages">
+                                        <li class="active"><a href="?pageid=1" onclick="return false">1</a></li>
+                                        <li><a href="?pageid=2">2</a></li>
+                                        <li class="next-page"><a href="?pageid=2">»</a></li>
+                                        <li class="last-page"><a href="?pageid=2">마지막</a></li>
+                                    </ul>
+                                </div>
+                                <!-- 페이징 끝 -->
+
+                                <!-- 버튼 시작 -->
+                                <div class="kboard-control">
+                                    <input type="hidden" name="pageid" value="1"><input type="hidden" name="mod"
+                                                                                        value="list">
+                                    <div class="kboard-search">
+                                        <select name="target">
+                                            <option value="">전체</option>
+                                            <option value="title">제목</option>
+                                            <option value="content">내용</option>
+                                            <option value="member_display">작성자</option>
+                                        </select>
+                                        <input type="text" name="keyword" value="">
+                                        <button type="submit" class="kboard-default-button-small">검색</button>
+                                    </div>
+                                </div>
+                                <!-- 버튼 끝 -->
+                            </form>
+                            <div id="inquiry-guide">[멘토 등록 문의] &nbsp;media.industry.link@gmail.com</div>
+                        </div>
+                        <div class="entry-links"></div>
+                    </section>
+                </article>
+            </section>
+        </div>
+    </div>
+    <div id="surveyContainer">
+        <div id="surveyContent_wrap">
+            <section id="surveyContent" role="main">
+                <div class="survey-content-list">
+                    <div class="survey">
+                        <div class="summaryText">
+                            <div class="interviewee_name"> 2008년, 이동영.
+                            </div>
+                            NCSOFT 대리, 리니지2 비주얼 기획. 학생 때부터 3D 애니메이션 및 아트 관련해서 많은 관심을 가지고 있었습니다. 비주얼 이펙트 디자이너로 게임 아트 업무를
+                            시작하였고 현재 게임 내부를 더 알아보고자 ...
+                        </div>
+                        <div class="fullText">blah blah</div>
+                        <div class="moreButton close">더보기 <i class="fas fa-caret-down"></i></div>
+                    </div>
+                    <div class="survey">
+                        <div class="summaryText">
+                            <div class="interviewee_name"> 서지완, 2010년.
+                            </div>
+                            회사명 : 삼성전자 게임서비스팀 팀원 / 직무 : 모바일 게임서비스 PM (Project Manager). 처음 아주대 미디어학부에 입학을 결정하기 훨씬 전부터,
+                            게임관련 직종이 희망 직업이었습니다 02년도 입학 ...
+                        </div>
+                        <div class="fullText">있을 인간의 무엇을 불어 꾸며 너의 내는 청춘을 아름다우냐? 예수는 방황하였으며, 청춘의 피고, 말이다. 새가 열매를 끓는 영락과 바로 것이다. 청춘의 무엇이 석가는 위하여서 있을 행복스럽고 천고에 우리의 있는가? 인생을 보내는 풍부하게 아름답고 이것이야말로 끓는다. 청춘의 원질이 이 과실이 사막이다. 사라지지 영원히 있을 청춘의 살 얼마나 싸인 현저하게 보라. 않는 길을 그들을 석가는 앞이 품에 몸이 봄바람이다. 같이, 청춘이 커다란 더운지라 천지는 그와 아름다우냐? 가지에 못할 오직 인생을 되는 이것이다.</div>
+                        <div class="moreButton close">더보기 <i class="fas fa-caret-down"></i></div>
+                    </div>
+                    <div class="survey">
+                        <div class="summaryText">
+                            <div class="interviewee_name"> 이재윤입니다. 학부 09년, 석사 11년에 졸업하였습니다.
+                            </div>
+                            현재 엔씨 소프트에서 클라이언트 프로그래머로 재직하고 있습니다. 대학 진학 전부터 이미 게임 프로그래머로 진로를 결정하고 미디어학부를 입학한 것이라 대학 재학 ...
+                        </div>
+                        <div class="moreButton close">더보기 <i class="fas fa-caret-down"></i></div>
+                    </div>
+                    <div class="survey">
+                        <div class="summaryText">
+                            <div class="interviewee_name"> 황중기, 2011년 2월 졸업.
+                            </div>
+                            ㈜엔씨소프트, 주임, 클라이언트 프로그래머로 근무 중. 딱히 계기라고 할만한 것은 없었던 것 같습니다. 원래부터 게임을 만들고 싶어서 이쪽으로 진학을 했었고, 학교
+                            와서 이런저런 공부를 하다 ...
+                        </div>
+                        <div class="moreButton close">더보기 <i class="fas fa-caret-down"></i></div>
+                    </div>
+                    <div class="survey">
+                        <div class="summaryText">
+                            <div class="interviewee_name"> 2008년, 이동영.
+                            </div>
+                            NCSOFT 대리, 리니지2 비주얼 기획. 학생 때부터 3D 애니메이션 및 아트 관련해서 많은 관심을 가지고 있었습니다. 비주얼 이펙트 디자이너로 게임 아트 업무를
+                            시작하였고 현재 게임 내부를 더 알아보고자 ...
+                        </div>
+                        <div class="moreButton close">더보기 <i class="fas fa-caret-down"></i></div>
+                    </div>
+                    <div class="survey">
+                        <div class="summaryText">
+                            <div class="interviewee_name"> 서지완, 2010년.
+                            </div>
+                            회사명 : 삼성전자 게임서비스팀 팀원 / 직무 : 모바일 게임서비스 PM (Project Manager). 처음 아주대 미디어학부에 입학을 결정하기 훨씬 전부터,
+                            게임관련 직종이 희망 직업이었습니다 02년도 입학 ...
+                        </div>
+                        <div class="moreButton close">더보기 <i class="fas fa-caret-down"></i></div>
+                    </div>
+                    <div class="survey">
+                        <div class="summaryText">
+                            <div class="interviewee_name"> 이재윤입니다. 학부 09년, 석사 11년에 졸업하였습니다.
+                            </div>
+                            현재 엔씨 소프트에서 클라이언트 프로그래머로 재직하고 있습니다. 대학 진학 전부터 이미 게임 프로그래머로 진로를 결정하고 미디어학부를 입학한 것이라 대학 재학 ...
+                        </div>
+                        <div class="moreButton close">더보기 <i class="fas fa-caret-down"></i></div>
+                    </div>
+                    <div class="survey">
+                        <div class="summaryText">
+                            <div class="interviewee_name"> 황중기, 2011년 2월 졸업.
+                            </div>
+                            ㈜엔씨소프트, 주임, 클라이언트 프로그래머로 근무 중. 딱히 계기라고 할만한 것은 없었던 것 같습니다. 원래부터 게임을 만들고 싶어서 이쪽으로 진학을 했었고, 학교
+                            와서 이런저런 공부를 하다 ...
+                        </div>
+                        <div class="moreButton close">더보기 <i class="fas fa-caret-down"></i></div>
+                    </div>
+                    .....
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+
+<div id="footer"></div>
+<script type='text/javascript'
+        src='http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/mil_editor/backend/js/mileditor.script.js?ver=4.6'></script>
+<script type='text/javascript' src='http://code.jquery.com/jquery-latest.min.js'></script>
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.js'></script>
+<script type='text/javascript'
+        src='http://media-jobs.ajou.ac.kr/wordpress/wp-content/themes/mil_theme/include/jquery.ui.touch-punch.js'></script>
+<script type='text/javascript'
+        src='http://media-jobs.ajou.ac.kr/wordpress/wp-content/themes/mil_theme/include/bootstrap-3.3.6-dist/js/bootstrap.min.js'></script>
+<script type='text/javascript'
+        src='http://media-jobs.ajou.ac.kr/wordpress/wp-content/themes/mil_theme/script.js'></script>
+<script type='text/javascript'>
+    /* <![CDATA[ */
+    var kboard_settings = {
+        "post_url": "http:\/\/media-jobs.ajou.ac.kr\/wordpress\/wp-admin\/admin-post.php",
+        "alax_url": "http:\/\/media-jobs.ajou.ac.kr\/wordpress\/wp-admin\/admin-ajax.php",
+        "plugin_url": "http:\/\/media-jobs.ajou.ac.kr\/wordpress\/wp-content\/plugins\/kboard",
+        "media_group": "5b355dd62153c"
+    };
+    var kboard_localize_strings = {
+        "kboard_add_media": "KBoard \ubbf8\ub514\uc5b4 \ucd94\uac00",
+        "next": "\ub2e4\uc74c",
+        "prev": "\uc774\uc804",
+        "please_enter_the_title": "\uc81c\ubaa9\uc744 \uc785\ub825\ud574\uc8fc\uc138\uc694.",
+        "please_enter_the_author": "\uc791\uc131\uc790\ub97c \uc785\ub825\ud574\uc8fc\uc138\uc694.",
+        "please_enter_the_password": "\ube44\ubc00\ubc88\ud638\ub97c \uc785\ub825\ud574\uc8fc\uc138\uc694.",
+        "please_enter_the_CAPTCHA": "\uc606\uc5d0 \ubcf4\uc774\ub294 \ubcf4\uc548\ucf54\ub4dc\ub97c \uc785\ub825\ud574\uc8fc\uc138\uc694.",
+        "you_have_already_voted": "\uc774\ubbf8 \ud22c\ud45c\ud588\uc2b5\ub2c8\ub2e4.",
+        "please_wait": "\uc7a0\uc2dc\ub9cc \uae30\ub2e4\ub824\uc8fc\uc138\uc694.",
+        "newest": "\ucd5c\uc2e0\uc21c",
+        "best": "\uc778\uae30\uc21c",
+        "updated": "\uc5c5\ub370\uc774\ud2b8\uc21c"
+    };
+    var kbaord_current = { "board_id": "1", "content_uid": "" };
+</script>
+<script type='text/javascript'
+        src='http://media-jobs.ajou.ac.kr/wordpress/wp-content/plugins/kboard/template/js/script.js?ver=5.2'></script>
+<script type='text/javascript'
+        src='http://media-jobs.ajou.ac.kr/wordpress/wp-includes/js/wp-embed.min.js?ver=4.6'></script>
+<script type='text/javascript'>
+    var $qnaSection = $('#qnaContainer');
+    var $surveySection = $('#surveyContainer');
+    var $showQnaButton = $('#showQnaButton');
+    var $showSurveyButton = $('#showSurveyButton');
+
+    $showQnaButton.click(function () {
+        $qnaSection.css('visibility', 'visible');
+        $surveySection.css('visibility', 'hidden');
+        $showQnaButton.addClass('selected');
+        $showSurveyButton.removeClass('selected');
+    });
+
+    $showSurveyButton.click(function () {
+        $qnaSection.css('visibility', 'hidden');
+        $surveySection.css('visibility', 'visible');
+        $showSurveyButton.addClass('selected');
+        $showQnaButton.removeClass('selected');
+    });
+
+    var closeButtonEvent = function () {
+        $(this).removeClass('close');
+        $(this).addClass('open');
+        $(this).unbind( "click" ).click(openButtonEvent);
+        $(this).css('bottom', '18px');
+        $(this).html('접기 <i class="fas fa-caret-up"></i>');
+        $(this).prev().prev('.summaryText').css('display', 'none');
+        $(this).prev('.fullText').css('display', 'block');
+    };
+
+    var openButtonEvent = function () {
+        $(this).removeClass('open');
+        $(this).addClass('close');
+        $(this).unbind( "click" ).click(closeButtonEvent);
+        $(this).html('더보기 <i class="fas fa-caret-down"></i>');
+        $(this).prev().prev('.summaryText').css('display', 'block');
+        $(this).prev('.fullText').css('display', 'none');
+    };
+
+    $('.moreButton.close').click(closeButtonEvent);
+</script>
+</body>
+</html>
+

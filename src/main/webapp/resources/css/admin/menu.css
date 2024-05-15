@@ -1,0 +1,194 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+.notosanskr * {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Cardo:ital@1&family=Playfair+Display+SC:ital@1&display=swap');
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+.left_menu{
+    position: fixed;
+    background-color: white;
+    width: 17%;
+    height: 100%;
+}
+
+.mil_logo{
+    /* logo */
+
+    position: fixed;
+    width: 16.87%;
+    height: 100%;
+    left: 4%;
+    top: -5%;
+    display: flex;
+    flex-direction: column;
+}
+.title{
+    width: 100%;
+    height: 16%;
+    display: flex;
+    flex-direction: row;
+}
+.title1{
+    position: relative;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 5rem;
+
+    color: #3FA9F5;
+}
+.title2{
+    position: relative;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 5rem;
+
+    color: #FBB03B;
+}
+.sub_title{
+    /* logo-관리자페이지 */
+
+    position: relative;
+    padding-left: 1.1%;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.2rem;
+    line-height: 0rem;
+    /* identical to box height */
+
+    letter-spacing: 0.4em;
+
+    color: #3FA9F5;
+}
+
+.menu1{
+    /* 메뉴-교과과정 편집 */
+
+    position: fixed;
+    width: 12.8%;
+    height: 11%;
+    top: 96px;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.94rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+
+    padding-left: 4.2%;
+    color: #000000;
+}
+.menu1:hover{
+    background-color: #3462DC;
+    color: #FFFF;
+}
+.menu2{
+    /* 메뉴-과목편집 */
+
+    position: fixed;
+    width: 12.8%;
+    height: 11%;
+    top: 166px;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.94rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+
+    padding-left: 4.2%;
+    color: #000000;
+}
+.menu2:hover{
+    background-color: #3462DC;
+    color: #FFFF;
+}
+.menu3{
+    /* 메뉴-전문가영상관리 */
+
+    position: fixed;
+    width: 12.8%;
+    height: 11%;
+    top: 236px;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.94rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+
+    padding-left: 4.2%;
+    color: #000000;
+}
+.menu3:hover{
+    background-color: #3462DC;
+    color: #FFFF;
+}
+.menu4{
+    /* 메뉴-멘토관리 */
+
+    position: fixed;
+    width: 12.8%;
+    height: 11%;
+    top: 306px;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.94rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+
+    padding-left: 4.2%;
+    color: #000000;
+}
+.menu4:hover{
+    background-color: #3462DC;
+    color: #FFFF;
+}
+.menu5{
+    /* 메뉴-전체메일발송 */
+
+    position: fixed;
+    width: 12.8%;
+    height: 11%;
+    top: 376px;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.94rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+
+    padding-left: 4.2%;
+    color: #000000;
+}
+.menu5:hover{
+    background-color: #3462DC;
+    color: #FFFF;
+}
