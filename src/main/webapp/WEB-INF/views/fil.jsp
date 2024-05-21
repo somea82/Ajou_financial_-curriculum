@@ -1,4 +1,6 @@
 <%@ page pageEncoding="UTF-8" contentType="text/html;charset=utf-8"%>
+<%@ page import="java.net.URLEncoder" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -154,8 +156,10 @@
                 <c:forEach var="jobList" items="${jobList}">
                     <tr>
                         <td class="jobs" style="color:${jobList.core_color}">
-                            <p onclick="trackClick('${jobList.job_id}','${jobList.name}','${jobList.core_color}')"><c:out value="${jobList.name}"/></p>
-                            <button type="button">
+                            <p onclick="trackClick('${jobList.job_id}','${jobList.name}','${jobList.core_color}')">
+                                <c:out value="${jobList.name}"/>
+                            </p>
+                            <button type="button" onclick="location.href='/jobdetail/${index}'">
                                 <img src="${pageContext.request.contextPath}/resources/fil/img/search.png">
                             </button>
                         </td>

@@ -15,6 +15,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.net.URLDecoder;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,13 +33,12 @@ public class SubjectController {
     private SqlSession sqlSession;
 
     @ResponseBody
-    @RequestMapping(value="/detail",method= RequestMethod.POST, produces="application/json; charset=utf-8")
-    public Map subjectDetail(Model model, String code)
-    {
-        System.out.println("in"+code);
+    @RequestMapping(value = "/detail", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
+    public Map subjectDetail(Model model, String code) {
+        System.out.println("in" + code);
         cilDAO dao = sqlSession.getMapper(cilDAO.class);
         Map<String, Object> result = new HashMap<String, Object>();
-        result.put("subjectDetailList",dao.subjectDetailList(code));
+        result.put("subjectDetailList", dao.subjectDetailList(code));
         //result.put("subjectPreList",dao.subjectPreList(code));
         //.put("subjectDetailCoreList",dao.subjectDetailCoreList(subject));
         //model.addAttribute("coreYN", dao.subjectDetailCoreList(subject));
@@ -45,13 +46,12 @@ public class SubjectController {
     }
 
     @ResponseBody
-    @RequestMapping(value="/track",method=RequestMethod.POST, produces="application/json; charset=utf-8")
-    public Map subjectTrackList(Model model,@RequestParam("carrer_path_id") String carrer_path_id,@RequestParam("small_category") String small_category)
-    {
-        System.out.println("in"+carrer_path_id);
+    @RequestMapping(value = "/track", method = RequestMethod.POST, produces = "application/json; charset=utf-8")
+    public Map subjectTrackList(Model model, @RequestParam("carrer_path_id") String carrer_path_id, @RequestParam("small_category") String small_category) {
+        System.out.println("in" + carrer_path_id);
         cilDAO dao = sqlSession.getMapper(cilDAO.class);
         Map<String, Object> result = new HashMap<String, Object>();
-        result.put("subjectTrackList",dao.subjectTrackList(carrer_path_id, small_category));
+        result.put("subjectTrackList", dao.subjectTrackList(carrer_path_id, small_category));
         return result;
     }
 
@@ -77,3 +77,4 @@ public class SubjectController {
         return this.boardService.selectBoardList(request, board);
     }*/
 }
+

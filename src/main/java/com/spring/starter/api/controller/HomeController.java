@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -14,9 +14,6 @@ import com.spring.starter.dao.cilDAO;
 import com.spring.starter.dao.amamDAO;
 import com.spring.starter.dao.adminDAO;
 
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.servlet.http.HttpSession;
@@ -254,5 +251,10 @@ public class HomeController {
         return "admin/login"; // 로그인 JSP 페이지
     }
 
-
+    @RequestMapping("/jobdetail/{index}")
+    public String jobDetail(@PathVariable("index") int index) {
+//        model.addAttribute("index", index);
+//        model.addAttribute("name", decodedName);
+        return String.format("/jobdetail/job%d", index);
+    }
 }
