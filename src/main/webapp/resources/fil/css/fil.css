@@ -26,10 +26,9 @@ body,html{
 .cil_table_section{
 	width:80%;
     height : 100%;
-    background-color :#f7f7f7;
+    background-color : #f4f4f9;
     min-width:900px;
     min-height:100%;
-    background: none;
 /*   background:url(*/
 /*data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAABlJREFUGFdjvHDhwkwGKGAEcZSUlMBcFA4A4ikJ6zan5dEAAAAASUVORK5CYII=*/
 /*   ) repeat;*/
