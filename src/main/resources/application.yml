@@ -66,8 +66,13 @@ logging:
           filter: DEBUG
       hibernate.type: trace
 
+admin:
+  username: admin
+  password: 1234
+
 jwt:
   secret: ENC(ZDLPHyvd1oCQRuos3ITfyhXrM8SmFiFiXCrYj0y3jSIAafMLCSW5RfCAT1xhrq/73tWvWyEIDNT6TVkaDKDI2nc30GUTA1fjnPDjCwelhQAANthObehUXQx7nb21q7gNo1gvKIkQo+4x5LQfJOm5zg==)
+  expiration: 86400000 # 1 day in milliseconds
 
 jasypt:
   encryptor:

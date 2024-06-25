@@ -115,4 +115,9 @@ public class TokenProvider {
             return e.getClaims();
         }
     }
+
+    public String getUsernameFromToken(String token) {
+        Claims claims = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(token).getBody();
+        return claims.getSubject();
+    }
 }

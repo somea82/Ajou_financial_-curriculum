@@ -2,31 +2,64 @@ package com.spring.starter.api.controller;
 
 import com.spring.starter.api.service.SubjectService;
 
+import com.spring.starter.config.jwt.TokenProvider;
 import com.spring.starter.dao.adminDAO;
 import com.spring.starter.dao.cilDAO;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 
+import javax.naming.AuthenticationException;
+import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RestController
 @RequiredArgsConstructor
 public class AdminController {
+
+    @Autowired
+    private AuthenticationManager authenticationManager;
+    @Autowired
+    private TokenProvider tokenProvider;
 
     private final SubjectService subjectService;
 
     @Autowired
     private SqlSession sqlSession;
 
+    @GetMapping("/login")
+    public String showLoginForm() {
+        System.out.println("AdminController.showLoginForm");
+        return "admin/login"; // 로그인 JSP 페이지
+    }
+    @PostMapping(value = "/login")
+    public ModelAndView login(@RequestParam("username") String username,
+                              @RequestParam("password") String password,
+                              HttpServletResponse response) {
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(username, password)
+        );
+
+        String jwt = tokenProvider.generateTokenDto(authentication).getAccessToken();
+        response.addHeader("Authorization", "Bearer " + jwt);
+
+        ModelAndView modelAndView = new ModelAndView("redirect:/admin/dashboard");
+        modelAndView.addObject("token", jwt);
+        return modelAndView;
+    }
     @ResponseBody
     @RequestMapping(value="admin/curriculum/delete",method=RequestMethod.POST, produces="application/json; charset=utf-8")
     public Map deleteCurriculum(Model model, int page_id)
@@ -298,5 +331,11 @@ public class AdminController {
         return this.boardService.selectBoardList(request, board);
     }*/
 
+    @Getter
+    @Setter
+    class LoginRequest {
+        private String username;
+        private String password;
+        }
 }
 

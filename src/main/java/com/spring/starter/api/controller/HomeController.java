@@ -227,29 +227,6 @@ public class HomeController {
         }
         return "fil-admin/subject";
     }
-    @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String login(@RequestParam("username") String username,
-                        @RequestParam("password") String password,
-                        HttpSession session, RedirectAttributes redirectAttributes) {
-//
-//        User user = userService.validateUser(username, password);
-//        if (user != null && user.hasAdminRights()) {
-//            session.setAttribute("currentUser", user);
-//            return "redirect:/admin"; // 관리자 페이지
-//        } else if (user != null) {
-//            session.setAttribute("currentUser", user);
-//            return "redirect:/home"; // 일반 사용자 페이지
-//        } else {
-//            redirectAttributes.addFlashAttribute("error", "Invalid username or password");
-//            return "redirect:/login"; // 로그인 페이지로 다시 리다이렉트
-//        }
-        return null;
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String showLoginForm() {
-        return "admin/login"; // 로그인 JSP 페이지
-    }
 
     @RequestMapping("/jobdetail/{index}")
     public String jobDetail(@PathVariable("index") int index) {
@@ -257,4 +234,5 @@ public class HomeController {
 //        model.addAttribute("name", decodedName);
         return String.format("/jobdetail/job%d", index);
     }
+
 }

@@ -1,9 +1,13 @@
 package com.spring.starter.config.security;
 
+import com.spring.starter.api.service.AdminDetailsService;
 import com.spring.starter.config.jwt.JwtFilter;
 import com.spring.starter.config.jwt.TokenProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -23,6 +27,14 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
     public JwtSecurityConfig(TokenProvider tokenProvider, JwtAccessDeniedHandler accessDeniedHandler) {
         this.tokenProvider = tokenProvider;
         this.accessDeniedHandler = accessDeniedHandler;
+    }
+
+    @Autowired
+    private AdminDetailsService adminDetailsService;
+
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(adminDetailsService);
     }
 
 
@@ -55,5 +67,10 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
                 "/img/**",       // 정적 파일 허용
                 "/webjars/**"    // 정적 파일 허용
         );
+    }
+    @Bean
+    @Override
+    public AuthenticationManager authenticationManagerBean() throws Exception {
+        return super.authenticationManagerBean();
     }
 }
