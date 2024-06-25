@@ -29,11 +29,11 @@
     <section class="main_contents">
 
         <div class="area_section">
-            <table class="area_table">
+<%--            <table class="area_table">--%>
 
-                <tr>
-                    <th class="area_title"><span>MICRO</span></th>
-                </tr>
+<%--                <tr>--%>
+<%--                    <th class="area_title"><span>MICRO</span></th>--%>
+<%--                </tr>--%>
 <%--금융 트랙
                 <tr>
                     <td class="gi_wrap">
@@ -53,9 +53,9 @@
                 </c:forEach>
 
                 --%>
-                <tr><td></td></tr>
-                <tr><td></td></tr>
-            </table>
+<%--                <tr><td></td></tr>--%>
+<%--                <tr><td></td></tr>--%>
+<%--            </table>--%>
         </div>
         <div class="cil_table_section">
             <table>

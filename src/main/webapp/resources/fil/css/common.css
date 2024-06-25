@@ -43,11 +43,16 @@ body {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
+.main_contents {
+    display: flex; /* 플렉스 컨테이너로 설정하여 자식 요소가 가로로 나열되도록 함 */
+    width: 100%; /* 부모 요소의 너비를 100%로 설정 */
+}
+
 .area_section{
     height:100%;
+    width: 10%;
     margin:0px;
     padding-top:0px;
-    width:210px;
     background-color : white;
     display:flex;
     justify-content: center;

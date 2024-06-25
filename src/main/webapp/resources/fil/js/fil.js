@@ -11,6 +11,9 @@ function getDetail(code){
         type: 'POST',
         url: '/detail',
         async: true,
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('jwtToken') // JWT 토큰 포함
+        },
         data: { "code" : code },
         success: function (data) {
             var modal = $("#detailModal");
@@ -68,6 +71,9 @@ function trackClick(carrer_path_id, small_category,c_color){
         type: 'POST',
         url: '/track',
         async: true,
+        headers: {
+            'Authorization': 'Bearer ' + localStorage.getItem('jwtToken') // JWT 토큰 포함
+        },
         data: { "carrer_path_id" : carrer_path_id , "small_category" : small_category},
         dataType : 'json',
         success: function (data) {
