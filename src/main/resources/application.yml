@@ -68,7 +68,7 @@ logging:
 
 admin:
   username: admin
-  password: 1234
+  password: "$2a$10$u4XMQlZoKcihr/t8.6vICObLi5pNP.ESGJM1YZwqKQr.i.2Oa.YZa"
 
 jwt:
   secret: ENC(ZDLPHyvd1oCQRuos3ITfyhXrM8SmFiFiXCrYj0y3jSIAafMLCSW5RfCAT1xhrq/73tWvWyEIDNT6TVkaDKDI2nc30GUTA1fjnPDjCwelhQAANthObehUXQx7nb21q7gNo1gvKIkQo+4x5LQfJOm5zg==)

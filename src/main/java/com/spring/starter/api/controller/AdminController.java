@@ -2,6 +2,7 @@ package com.spring.starter.api.controller;
 
 import com.spring.starter.api.service.SubjectService;
 
+import com.spring.starter.config.jwt.TokenDto;
 import com.spring.starter.config.jwt.TokenProvider;
 import com.spring.starter.dao.adminDAO;
 import com.spring.starter.dao.cilDAO;
@@ -9,20 +10,24 @@ import com.spring.starter.dao.cilDAO;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
-import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
+import org.springframework.security.core.AuthenticationException;
 
-import javax.naming.AuthenticationException;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
+import java.net.URI;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,34 +36,40 @@ import java.util.Map;
 public class AdminController {
 
     @Autowired
-    private AuthenticationManager authenticationManager;
+    private final AuthenticationManager authenticationManager;
     @Autowired
-    private TokenProvider tokenProvider;
-
-    private final SubjectService subjectService;
-
+    private final TokenProvider tokenProvider;
     @Autowired
-    private SqlSession sqlSession;
+    private final SqlSession sqlSession;
 
     @GetMapping("/login")
     public String showLoginForm() {
-        System.out.println("AdminController.showLoginForm");
         return "admin/login"; // 로그인 JSP 페이지
     }
-    @PostMapping(value = "/login")
-    public ModelAndView login(@RequestParam("username") String username,
-                              @RequestParam("password") String password,
-                              HttpServletResponse response) {
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(username, password)
-        );
+    @PostMapping("/login")
+    public ResponseEntity<Void> login(@RequestParam("username") String username,
+                                      @RequestParam("password") String password,
+                                      HttpServletResponse response) {
+        try {
+            Authentication authentication = authenticationManager.authenticate(
+                    new UsernamePasswordAuthenticationToken(username, password)
+            );
 
-        String jwt = tokenProvider.generateTokenDto(authentication).getAccessToken();
-        response.addHeader("Authorization", "Bearer " + jwt);
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            TokenDto tokenDto = tokenProvider.generateTokenDto(authentication);
 
-        ModelAndView modelAndView = new ModelAndView("redirect:/admin/dashboard");
-        modelAndView.addObject("token", jwt);
-        return modelAndView;
+            // JWT 토큰을 쿠키에 저장
+            Cookie jwtCookie = new Cookie("JWT", tokenDto.getAccessToken());
+            jwtCookie.setHttpOnly(true);
+            jwtCookie.setSecure(true); // HTTPS에서만 사용하도록 설정
+            jwtCookie.setPath("/");
+            jwtCookie.setMaxAge(60 * 60 * 24 * 60); // 60일 동안 유효
+            response.addCookie(jwtCookie);
+
+            return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("/admin")).build();
+        } catch (AuthenticationException e) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+        }
     }
     @ResponseBody
     @RequestMapping(value="admin/curriculum/delete",method=RequestMethod.POST, produces="application/json; charset=utf-8")

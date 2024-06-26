@@ -42,6 +42,8 @@ public class TokenProvider {
                 .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.joining(","));
 
+        log.info("Generating token for user: {}, with authorities: {}", authentication.getName(), authorities);
+
         long now = (new Date()).getTime();
 
         // Access Token 생성
@@ -53,11 +55,15 @@ public class TokenProvider {
                 .signWith(key, SignatureAlgorithm.HS512)    // header "alg": "HS512"
                 .compact();
 
+        log.info("Generated Access Token: {}", accessToken);
+
         // Refresh Token 생성
         String refreshToken = Jwts.builder()
                 .setExpiration(new Date(now + REFRESH_TOKEN_EXPIRE_TIME))
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
+
+        log.info("Generated Refresh Token: {}", refreshToken);
 
         return TokenDto.builder()
                 .grantType(BEARER_TYPE)

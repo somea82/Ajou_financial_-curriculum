@@ -21,10 +21,13 @@ public class AdminDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        if (!username.equals(adminUsername)) {
-            throw new UsernameNotFoundException("Admin not found with username: " + username);
+        if (!adminUsername.equals(username)) {
+            throw new UsernameNotFoundException("User not found");
         }
-
-        return new User(adminUsername, adminPassword, Collections.singleton(new SimpleGrantedAuthority("ROLE_ADMIN")));
+        System.out.println(adminPassword);
+        return User.withUsername(adminUsername)
+                .password(adminPassword)
+                .roles("ADMIN")
+                .build();
     }
 }
