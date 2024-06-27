@@ -243,7 +243,7 @@ span{
     height: 10%;
     padding-left: 15px;
     border-bottom: 1px solid #464646;
-    color: #3462dc;
+    color: #464646;
     font-size: 16px;
     font-weight: bold;
     padding-top: 0;
@@ -265,8 +265,8 @@ span{
 .modal_left_wrap div, .modal_right_wrap div{
     height:20%;
 }
-.modal_left_wrap div p, .modal_right_wrap div p{
-    font-size:13px;
+.modal_left_wrap div p, .modal_right_wrap div p {
+    font-size: 13px;
 }
 .modal_left_wrap div .title, .modal_right_wrap div .title{
     font-size:14px;

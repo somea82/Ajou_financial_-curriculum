@@ -46,11 +46,19 @@
         .form-control input[type="submit"]:hover {
             background-color: #004494;
         }
+        .error-message {
+            color: red;
+            margin-bottom: 1em;
+        }
     </style>
+
 </head>
 <body>
 <div class="login-form">
     <h2>관리자 로그인</h2>
+    <c:if test="${not empty error}">
+        <div class="error-message">${error}</div>
+    </c:if>
     <form action="/login" method="post">
         <div class="form-control">
             <label for="username">ID</label>

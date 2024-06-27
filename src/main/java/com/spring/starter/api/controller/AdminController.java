@@ -12,9 +12,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -22,7 +20,6 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
 import org.springframework.security.core.AuthenticationException;
 
 import javax.servlet.http.Cookie;
@@ -47,9 +44,10 @@ public class AdminController {
         return "admin/login"; // 로그인 JSP 페이지
     }
     @PostMapping("/login")
-    public ResponseEntity<Void> login(@RequestParam("username") String username,
+    public String login(@RequestParam("username") String username,
                                       @RequestParam("password") String password,
-                                      HttpServletResponse response) {
+                                      HttpServletResponse response,
+                        RedirectAttributes redirectAttributes) {
         try {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(username, password)
@@ -66,9 +64,10 @@ public class AdminController {
             jwtCookie.setMaxAge(60 * 60 * 24 * 60); // 60일 동안 유효
             response.addCookie(jwtCookie);
 
-            return ResponseEntity.status(HttpStatus.FOUND).location(URI.create("/admin")).build();
-        } catch (AuthenticationException e) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+            return "redirect:/admin";
+        }catch (AuthenticationException e) {
+            redirectAttributes.addFlashAttribute("error", "아이디 또는 비밀번호가 잘못되었습니다.");
+            return "redirect:/login";
         }
     }
     @ResponseBody
