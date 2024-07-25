@@ -58,9 +58,14 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().authenticated() // 그 외 모든 경로는 인증 필요
                 .and()
                 .exceptionHandling()
+                .authenticationEntryPoint(customAuthenticationEntryPoint()) // Custom AuthenticationEntryPoint 설정
                 .accessDeniedHandler(accessDeniedHandler) // 접근 거부 핸들러 설정
                 .and()
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+    }
+    @Bean
+    public CustomAuthenticationEntryPoint customAuthenticationEntryPoint() {
+        return new CustomAuthenticationEntryPoint();
     }
 
     @Override

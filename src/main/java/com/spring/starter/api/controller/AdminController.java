@@ -61,7 +61,7 @@ public class AdminController {
             jwtCookie.setHttpOnly(true);
             jwtCookie.setSecure(true); // HTTPS에서만 사용하도록 설정
             jwtCookie.setPath("/");
-            jwtCookie.setMaxAge(60 * 60 * 24 * 60); // 60일 동안 유효
+            jwtCookie.setMaxAge(60*60); // 1시간 동안 유효
             response.addCookie(jwtCookie);
 
             return "redirect:/admin";
