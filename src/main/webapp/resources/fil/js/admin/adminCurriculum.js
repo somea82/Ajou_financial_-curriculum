@@ -182,22 +182,51 @@ function SubmitInfoButton(){
 }
 function UpdateSubjectInfo(){
     alert("과목 수정 : "+document.getElementById('subject_code').value);
+
     var code = document.getElementById("subject_code").value;
+    var name = document.getElementById("subject_name").value;
+    var semester = document.getElementById("subject_semester").value;
+    var detail = document.getElementById("subject_detail").value;
+    var isMandatory = document.getElementById("major").checked ? 1 : 0;
+    var originalLanguage = document.getElementById("origin").checked ? 1 : 0;
+
+
+    var preSubjectCodes = [
+        document.getElementById("presubject_select1").value,
+        document.getElementById("presubject_select2").value,
+        document.getElementById("presubject_select3").value
+    ];
+    var relSubjectCodes = [
+        document.getElementById("related_subject_select1").value,
+        document.getElementById("related_subject_select2").value,
+        document.getElementById("related_subject_select3").value
+    ];
+
+    var data = {
+        code: code,
+        name: name,
+        semester: semester,
+        detail: detail,
+        is_mandatory: isMandatory,
+        original_language: originalLanguage,
+        preSubjectCodes: preSubjectCodes,
+        relSubjectCodes: relSubjectCodes
+    };
+    console.log("Data to be sent:", JSON.stringify(data)); // 데이터가 올바르게 생성되었는지 확인하기 위한 로그
+
+
     $.ajax({
         type: 'POST',
         url: '/admin/subject/SubjectUpdate',
         async: true,
-        data: {
-            "code": code,
-            "name":document.getElementById("subject_name").value,
-            "semester":document.getElementById("subject_semester").value,
-            "detail":document.getElementById("subject_detail").value,
-            "is_mandatory":document.getElementById("major").value,
-            "original_language":document.getElementById("origin").value
-
-        },
+        contentType: "application/json",
+        data: JSON.stringify(data),
         success: function (data) {
             $("#mil_subject_table_wrap").load("/admin/subject #mil_subject_table_wrap");
+        },
+        error: function(request, status, error) {
+            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
         }
     });
 }

@@ -29,5 +29,7 @@ public interface adminDAO {
     public void addPrerequisite(@Param("code") String code,@Param("pre_subject_code")String pre_subject_code);
     public void updatePrerequisite(@Param("code") String code,@Param("pre_subject_code")String pre_subject_code);
     public void deletePrerequisite(@Param("code") String code ,@Param("pre_subject_code")String pre_subject_code);
+    public void deletePrerequisiteBySubjectCode(String code);
+    public void deleteRelateBySubjectCode(String code);
 
-}
+    }

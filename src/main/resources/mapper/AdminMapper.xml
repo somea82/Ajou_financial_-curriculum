@@ -80,6 +80,10 @@
     <delete id="deleteRelate">
         delete from linka.relate_subjects WHERE code=#{code} AND relate_subject_code=#{relate_subject_code}
     </delete>
+
+    <delete id="deleteRelateBySubjectCode" parameterType="String">
+        DELETE FROM linka.relate_subjects WHERE code = #{code}
+    </delete>
     <!--
     prerequisite_subjects
     -->
@@ -93,6 +97,10 @@
 
     <delete id="deletePrerequisite">
         delete from linka.Prerequisite WHERE code=#{code} AND pre_subject_code=#{pre_subject_code}
+    </delete>
+
+    <delete id="deletePrerequisiteBySubjectCode" parameterType="String">
+        DELETE FROM linka.prerequisite_subjects WHERE code = #{code}
     </delete>
 
 </mapper>

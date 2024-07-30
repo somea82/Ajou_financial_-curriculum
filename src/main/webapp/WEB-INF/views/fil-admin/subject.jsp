@@ -400,7 +400,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <th>동시개설 학과 2</th>
+                            <th>동시개설 학과 3</th>
                             <td>
                                 <input
                                         class="mil_input"

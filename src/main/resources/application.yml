@@ -1,5 +1,4 @@
 spring:
-
   datasource:
     #    TODO AWS RDS
     driver-class-name: org.mariadb.jdbc.Driver
@@ -76,7 +75,8 @@ jwt:
 
 jasypt:
   encryptor:
-    bean: jasyptStringEncryptor
+    password: ${JASYPT_ENCRYPTOR_PASSWORD}
+    algorithm: PBEWithMD5AndDES
 
 cloud:
   aws:

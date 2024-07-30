@@ -26,6 +26,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 import java.net.URI;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -99,18 +100,59 @@ public class AdminController {
     }
 
     @ResponseBody
-    @RequestMapping(value="/admin/subject/SubjectUpdate",method=RequestMethod.POST, produces="application/json; charset=utf-8")
-    public Map updateFeSubject(Model model,@RequestParam("code") String code,@RequestParam("name") String name,@RequestParam("detail") String detail,@RequestParam("semester") int semester,@RequestParam("is_mandatory") int is_mandatory,@RequestParam("original_language") int original_language)
-    {
-        System.out.println("subject update in"+code);
+    @RequestMapping(value="/admin/subject/SubjectUpdate",method=RequestMethod.POST, consumes = "application/json" , produces = "application/json; charset=utf-8")
+    public Map<String, Object> updateSubject(
+            @RequestBody(required = false) Map<String, Object> requestData) {
+
+        String code = (String) requestData.get("code");
+        String name = (String) requestData.get("name");
+        int semester = 0;
+        if (requestData.get("semester") instanceof Integer) {
+            semester = (Integer) requestData.get("semester");
+        } else if (requestData.get("semester") instanceof String) {
+            semester = Integer.parseInt((String) requestData.get("semester"));
+        }
+        String detail = (String) requestData.get("detail");
+        int isMandatory = 0;
+        if (requestData.get("is_mandatory") instanceof Integer) {
+            isMandatory = (Integer) requestData.get("is_mandatory");
+        } else if (requestData.get("is_mandatory") instanceof String) {
+            isMandatory = Integer.parseInt((String) requestData.get("is_mandatory"));
+        }
+        int originalLanguage = 0;
+        if (requestData.get("original_language") instanceof Integer) {
+            originalLanguage = (Integer) requestData.get("original_language");
+        } else if (requestData.get("original_language") instanceof String) {
+            originalLanguage = Integer.parseInt((String) requestData.get("original_language"));
+        }
+
+        List<String> preSubjectCodes = (List<String>) requestData.get("preSubjectCodes");
+        List<String> relSubjectCodes = (List<String>) requestData.get("relSubjectCodes");
+
+        System.out.println("subject update in " + code);
         adminDAO dao = sqlSession.getMapper(adminDAO.class);
-        cilDAO cao = sqlSession.getMapper(cilDAO.class);
-        Map<String, Object> result = new HashMap<String, Object>();
-        //result.put("subjectTrackList",dao.subjectTrackList(page_id));
-        dao.updateFeSubject(code,name,detail,semester,is_mandatory,original_language);
+        dao.updateFeSubject(code, name, detail, semester, isMandatory, originalLanguage);
+
+        // 선수 과목 업데이트 로직
+        dao.deletePrerequisiteBySubjectCode(code); // 기존 선수 과목 삭제
+        for (String preSubjectCode : preSubjectCodes) {
+            if (!preSubjectCode.equals("None")) {
+                dao.addPrerequisite(code, preSubjectCode);
+            }
+        }
+
+        // 연계 과목 업데이트 로직
+        dao.deleteRelateBySubjectCode(code); // 기존 연계 과목 삭제
+        for (String relSubjectCode : relSubjectCodes) {
+            if (!relSubjectCode.equals("None")) {
+                dao.addRelate(code, relSubjectCode);
+            }
+        }
+
+        Map<String, Object> result = new HashMap<>();
+        result.put("status", "success");
         return result;
     }
-
     @ResponseBody
     @RequestMapping(value="/admin/subject/SubjectAdd",method=RequestMethod.POST, produces="application/json; charset=utf-8")
     public Map addFeSubject(Model model,@RequestParam("code") String code,@RequestParam("name") String name,@RequestParam("detail") String detail,@RequestParam("semester") int semester,@RequestParam("is_mandatory") int is_mandatory,@RequestParam("original_language") int original_language)
