@@ -217,38 +217,30 @@
                         <tr>
                             <th>필수 과목 여부</th>
                             <td>
-                                <input
-                                        id="major"
-                                        type="checkbox"
-                                        name="mil_subject_mandatory"
-                                        value="0"
-                                />
-                                <label>
-                                    필수 과목
-                                </label>
+                                <input id="major" type="checkbox" name="mil_subject_mandatory" value="0" />
+                                <label>필수 과목</label>
                                 <div class="description_container">
-                      <span class="description">
-                        과목이 필수 과목이면 체크해주세요
-                      </span>
+                                    <span class="description">과목이 필수 과목이면 체크해주세요</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>수학 과목 여부</th>
+                            <td>
+                                <input id="math" type="checkbox" name="mil_math_subject" value="0" />
+                                <label>수학 과목</label>
+                                <div class="description_container">
+                                    <span class="description">과목이 수학 과목이면 체크해주세요</span>
                                 </div>
                             </td>
                         </tr>
                         <tr>
                             <th>원어 과목 여부</th>
                             <td>
-                                <input
-                                        id="origin"
-                                        type="checkbox"
-                                        name="mil_subject_origin_language"
-                                        value="0"
-                                />
-                                <label>
-                                    원어 과목
-                                </label>
+                                <input id="origin" type="checkbox" name="mil_subject_origin_language" value="0" />
+                                <label>원어 과목</label>
                                 <div class="description_container">
-                      <span class="description">
-                        과목이 원어 과목이면 체크해주세요
-                      </span>
+                                    <span class="description">과목이 원어 과목이면 체크해주세요</span>
                                 </div>
                             </td>
                         </tr>

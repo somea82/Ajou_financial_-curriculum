@@ -189,7 +189,7 @@ function UpdateSubjectInfo(){
     var detail = document.getElementById("subject_detail").value;
     var isMandatory = document.getElementById("major").checked ? 1 : 0;
     var originalLanguage = document.getElementById("origin").checked ? 1 : 0;
-
+    var isMathSubject = document.getElementById("math").checked ? 1 : 0;
 
     var preSubjectCodes = [
         document.getElementById("presubject_select1").value,
@@ -209,6 +209,7 @@ function UpdateSubjectInfo(){
         detail: detail,
         is_mandatory: isMandatory,
         original_language: originalLanguage,
+        is_math_subject: isMathSubject,
         preSubjectCodes: preSubjectCodes,
         relSubjectCodes: relSubjectCodes
     };

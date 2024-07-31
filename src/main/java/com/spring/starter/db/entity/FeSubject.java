@@ -40,6 +40,7 @@ public class FeSubject extends BaseEntity{
 
     private int original_language;
 
+    private int isMath;
 
     @OneToMany(mappedBy = "code", cascade = CascadeType.ALL)
     List<FilPosition> positionList;
