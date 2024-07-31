@@ -46,7 +46,7 @@
     </insert>
 
     <update id="updateFeSubject">
-        UPDATE linka.fe_subject SET name=#{name}, detail=#{detail}, semester=#{semester},is_mandatory=#{is_mandatory},original_language=#{original_language} WHERE code=#{code}
+        UPDATE linka.fe_subject SET name=#{name}, detail=#{detail}, semester=#{semester},is_mandatory=#{is_mandatory},original_language=#{original_language},is_math=#{is_math} WHERE code=#{code}
     </update>
 
     <delete id="deleteFeSubject">

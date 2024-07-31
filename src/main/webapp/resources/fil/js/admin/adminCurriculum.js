@@ -29,15 +29,22 @@ function getSubjectInfo(code){
                             document.getElementById("major").checked = true;
                             document.getElementById("major").value = "1";
                         } else {
-                                document.getElementById("major").checked = null;
+                                document.getElementById("major").checked = false;
                                 document.getElementById("major").value = "0";
                         }
                         if (data.subjectDetailList[0].original_language == 1) {
                             document.getElementById("origin").checked = true;
                             document.getElementById("origin").value = "1";
                         } else {
-                                document.getElementById("origin").checked = null;
+                                document.getElementById("origin").checked = false;
                                 document.getElementById("origin").value = "0";
+                        }
+                        if (data.subjectDetailList[0].isMath == 1) {
+                            document.getElementById("math").checked = true;
+                            document.getElementById("math").value = "1";
+                        } else {
+                            document.getElementById("math").checked = false;
+                            document.getElementById("math").value = "0";
                         }
 
                         var ps_list = ["presubject_select1", "presubject_select2", "presubject_select3"];
@@ -189,7 +196,7 @@ function UpdateSubjectInfo(){
     var detail = document.getElementById("subject_detail").value;
     var isMandatory = document.getElementById("major").checked ? 1 : 0;
     var originalLanguage = document.getElementById("origin").checked ? 1 : 0;
-    var isMathSubject = document.getElementById("math").checked ? 1 : 0;
+    var isMath = document.getElementById("math").checked ? 1 : 0;
 
     var preSubjectCodes = [
         document.getElementById("presubject_select1").value,
@@ -209,7 +216,7 @@ function UpdateSubjectInfo(){
         detail: detail,
         is_mandatory: isMandatory,
         original_language: originalLanguage,
-        is_math_subject: isMathSubject,
+        is_math: isMath,
         preSubjectCodes: preSubjectCodes,
         relSubjectCodes: relSubjectCodes
     };
@@ -233,21 +240,49 @@ function UpdateSubjectInfo(){
 }
 function AddSubjectInfo(){
     alert("과목 추가 : "+document.getElementById('subject_code').value);
+
     var code = document.getElementById("subject_code").value;
+    var name = document.getElementById("subject_name").value;
+    var semester = document.getElementById("subject_semester").value;
+    var detail = document.getElementById("subject_detail").value;
+    var isMandatory = document.getElementById("major").checked ? 1 : 0;
+    var originalLanguage = document.getElementById("origin").checked ? 1 : 0;
+    var isMath = document.getElementById("math").checked ? 1 : 0;
+
+    var preSubjectCodes = [
+        document.getElementById("presubject_select1").value,
+        document.getElementById("presubject_select2").value,
+        document.getElementById("presubject_select3").value
+    ];
+    var relSubjectCodes = [
+        document.getElementById("related_subject_select1").value,
+        document.getElementById("related_subject_select2").value,
+        document.getElementById("related_subject_select3").value
+    ];
+
+    var data = {
+        code: code,
+        name: name,
+        semester: semester,
+        detail: detail,
+        is_mandatory: isMandatory,
+        original_language: originalLanguage,
+        is_math: isMath,
+        preSubjectCodes: preSubjectCodes,
+        relSubjectCodes: relSubjectCodes
+    };
+
     $.ajax({
         type: 'POST',
         url: '/admin/subject/SubjectAdd',
         async: true,
-        data: {
-            "code": code,
-            "name":document.getElementById("subject_name").value,
-            "semester":document.getElementById("subject_semester").value,
-            "detail":document.getElementById("subject_detail").value,
-            "is_mandatory":document.getElementById("major").value,
-            "original_language":document.getElementById("origin").value
-        },
+        data: JSON.stringify(data),
         success : function (data){
             $("#mil_subject_table_wrap").load("/admin/subject #mil_subject_table_wrap");
+        },
+        error: function(request, status, error) {
+            alert("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
+            console.log("code:" + request.status + "\n" + "message:" + request.responseText + "\n" + "error:" + error);
         }
     });
 }

@@ -7,6 +7,7 @@ public class cilDetailDTO {
     private String detail;
     private int semester;
     private int is_mandatory;
+    private int is_math;
     private int original_language;
     private String joint_department;
     private String pre_subject_code;
@@ -49,6 +50,12 @@ public class cilDetailDTO {
     }
     public void setIs_mandatory(int is_mandatory) {
         this.is_mandatory = is_mandatory;
+    }
+    public int getIsMath() {
+        return is_math;
+    }
+    public void setIsMath(int is_math) {
+        this.is_math = is_math;
     }
     public int getOriginal_language() {
         return original_language;

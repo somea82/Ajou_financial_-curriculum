@@ -125,13 +125,19 @@ public class AdminController {
         } else if (requestData.get("original_language") instanceof String) {
             originalLanguage = Integer.parseInt((String) requestData.get("original_language"));
         }
+        int isMath = 0;
+        if (requestData.get("is_math") instanceof Integer) {
+            isMath = (Integer) requestData.get("is_math");
+        } else if (requestData.get("is_math") instanceof String) {
+            isMath = Integer.parseInt((String) requestData.get("is_math"));
+        }
 
         List<String> preSubjectCodes = (List<String>) requestData.get("preSubjectCodes");
         List<String> relSubjectCodes = (List<String>) requestData.get("relSubjectCodes");
 
         System.out.println("subject update in " + code);
         adminDAO dao = sqlSession.getMapper(adminDAO.class);
-        dao.updateFeSubject(code, name, detail, semester, isMandatory, originalLanguage);
+        dao.updateFeSubject(code, name, detail, semester, isMandatory, originalLanguage,isMath);
 
         // 선수 과목 업데이트 로직
         dao.deletePrerequisiteBySubjectCode(code); // 기존 선수 과목 삭제
