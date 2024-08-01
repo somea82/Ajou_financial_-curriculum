@@ -276,6 +276,7 @@ function AddSubjectInfo(){
         type: 'POST',
         url: '/admin/subject/SubjectAdd',
         async: true,
+        contentType: "application/json",
         data: JSON.stringify(data),
         success : function (data){
             $("#mil_subject_table_wrap").load("/admin/subject #mil_subject_table_wrap");

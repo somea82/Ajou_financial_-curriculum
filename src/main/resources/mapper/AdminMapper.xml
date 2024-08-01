@@ -42,7 +42,7 @@
     fe_subject
     -->
     <insert id="addFeSubject" >
-        INSERT INTO linka.fe_subject(code, name, detail, semester,is_mandatory,original_language) VALUES (#{code}, #{name}, #{detail}, #{semester}, #{is_mandatory}, #{original_language})
+        INSERT INTO linka.fe_subject(code, name, detail, semester,is_mandatory,is_math,original_language) VALUES (#{code}, #{name}, #{detail}, #{semester}, #{is_mandatory}, #{is_math},#{original_language})
     </insert>
 
     <update id="updateFeSubject">

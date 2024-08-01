@@ -160,15 +160,60 @@ public class AdminController {
         return result;
     }
     @ResponseBody
-    @RequestMapping(value="/admin/subject/SubjectAdd",method=RequestMethod.POST, produces="application/json; charset=utf-8")
-    public Map addFeSubject(Model model,@RequestParam("code") String code,@RequestParam("name") String name,@RequestParam("detail") String detail,@RequestParam("semester") int semester,@RequestParam("is_mandatory") int is_mandatory,@RequestParam("original_language") int original_language)
-    {
+    @RequestMapping(value="/admin/subject/SubjectAdd", method=RequestMethod.POST, consumes = "application/json", produces = "application/json; charset=utf-8")
+    public Map<String, Object> addFeSubject(@RequestBody(required = false) Map<String, Object> requestData) {
         System.out.println("FeSubject add in");
+
+        String code = (String) requestData.get("code");
+        String name = (String) requestData.get("name");
+        int semester = 0;
+        if (requestData.get("semester") instanceof Integer) {
+            semester = (Integer) requestData.get("semester");
+        } else if (requestData.get("semester") instanceof String) {
+            semester = Integer.parseInt((String) requestData.get("semester"));
+        }
+        String detail = (String) requestData.get("detail");
+        int isMandatory = 0;
+        if (requestData.get("is_mandatory") instanceof Integer) {
+            isMandatory = (Integer) requestData.get("is_mandatory");
+        } else if (requestData.get("is_mandatory") instanceof String) {
+            isMandatory = Integer.parseInt((String) requestData.get("is_mandatory"));
+        }
+        int originalLanguage = 0;
+        if (requestData.get("original_language") instanceof Integer) {
+            originalLanguage = (Integer) requestData.get("original_language");
+        } else if (requestData.get("original_language") instanceof String) {
+            originalLanguage = Integer.parseInt((String) requestData.get("original_language"));
+        }
+        int isMath = 0;
+        if (requestData.get("is_math") instanceof Integer) {
+            isMath = (Integer) requestData.get("is_math");
+        } else if (requestData.get("is_math") instanceof String) {
+            isMath = Integer.parseInt((String) requestData.get("is_math"));
+        }
+
+        List<String> preSubjectCodes = (List<String>) requestData.get("preSubjectCodes");
+        List<String> relSubjectCodes = (List<String>) requestData.get("relSubjectCodes");
+
         adminDAO dao = sqlSession.getMapper(adminDAO.class);
-        Map<String, Object> result = new HashMap<String, Object>();
-        dao.addFeSubject(code,name,detail,semester,is_mandatory,original_language);
-        //result.put("subjectTrackList",dao.subjectTrackList(page_id));
-        //result.put("mentorDetailList", dao.mentorDetailList(id));
+        Map<String, Object> result = new HashMap<>();
+        dao.addFeSubject(code, name, detail, semester, isMandatory, originalLanguage, isMath);
+
+        // 선수 과목 추가 로직
+        for (String preSubjectCode : preSubjectCodes) {
+            if (!preSubjectCode.equals("None")) {
+                dao.addPrerequisite(code, preSubjectCode);
+            }
+        }
+
+        // 연계 과목 추가 로직
+        for (String relSubjectCode : relSubjectCodes) {
+            if (!relSubjectCode.equals("None")) {
+                dao.addRelate(code, relSubjectCode);
+            }
+        }
+
+        result.put("status", "success");
         return result;
     }
 

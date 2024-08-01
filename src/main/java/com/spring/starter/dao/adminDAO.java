@@ -11,7 +11,7 @@ public interface adminDAO {
     public ArrayList<curriDTO> curriList();
     public void deleteCurriculum(int page_id);
 
-    public void addFeSubject(@Param("code") String code, @Param("name") String name, @Param("detail") String detail, @Param("semester") int semester, @Param("is_mandatory") int is_mandatory, @Param("original_language") int original_language);
+    public void addFeSubject(@Param("code") String code, @Param("name") String name, @Param("detail") String detail, @Param("semester") int semester, @Param("is_mandatory") int is_mandatory, @Param("original_language") int original_language,@Param("is_math") int isMath);
     public void updateFeSubject(@Param("code") String code, @Param("name") String name, @Param("detail") String detail, @Param("semester") int semester, @Param("is_mandatory") int is_mandatory, @Param("original_language") int original_language,@Param("is_math") int isMath);
     public void deleteFeSubject(@Param("code") String code);
 
