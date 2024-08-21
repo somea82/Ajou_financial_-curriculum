@@ -5,7 +5,7 @@ spring:
     jdbc-url: jdbc:mariadb://ajoufe.iptime.org:3306/linka
     username: Ajou
 
-    password: 0i!gx8D4uD5gRJdS
+    password: D2B4@GmpI3r*IqS0
     mapper-locations: classpath*:mapper/*.xml
   mvc:
     view:

@@ -62,8 +62,11 @@
                                         </td>
                                         <td class="menu_action">
                                             <button class="mil_btn mil_blue_btn" type="button" onclick="open_pop_subject();" style="cursor: pointer;">과목등록</button>
-                                            <button class="mil_btn mil_green_btn" type="button" onclick="open_pop_modify();" style="cursor: pointer;">페이지 수정</button>
-                                            <button class="mil_btn mil_yellow_btn" target="_blank"  type="button" onClick="location.href='/'" original-title="교과과정표 보기" style="cursor: pointer;">페이지 보기</button>
+<%--                                            <a href="/editJobInfo?id=${curriList.page_id}">--%>
+<%--                                                <div class="mil_btn mil_green_btn" style="cursor: pointer;">페이지 수정</div>--%>
+<%--                                            </a>--%>
+                                            <button class="mil_btn mil_green_btn" type="button" onclick="location.href='/carrer-path/edit?id=${curriList.page_id}'" style="cursor: pointer;">페이지 수정</button>
+                                            <button class="mil_btn mil_yellow_btn" target="_blank"  type="button" onClick="location.href='/jobdetail/${curriList.page_id}'" original-title="교과과정표 보기" style="cursor: pointer;">페이지 보기</button>
                                             <button class="mil_btn mil_red_btn mil_page_remove_btn" type="button" data="701"  style="cursor: pointer;" onclick="deleteCurriculum('${curriList.page_id}')">삭제</button>
                                         </td>
                                     </tr>

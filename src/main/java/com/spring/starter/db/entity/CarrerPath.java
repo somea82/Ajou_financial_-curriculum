@@ -30,6 +30,10 @@ public class CarrerPath extends BaseEntity{
     CarrerId large_category;
     String small_category;
 
+    private String jobInfo;
+    private String jobEx;
+    private String ncsCode;
+
 
     @OneToMany(mappedBy = "small_category", cascade = CascadeType.ALL)
     List<CarrerPathSubjects> carrerPathSubjectsList;

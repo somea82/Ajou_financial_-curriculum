@@ -1,5 +1,6 @@
 package com.spring.starter.dao;
 
+import com.spring.starter.db.entity.CarrerPath;
 import com.spring.starter.model.curriDTO;
 import com.spring.starter.model.mentorDTO;
 import com.spring.starter.model.videoDTO;
@@ -32,4 +33,7 @@ public interface adminDAO {
     public void deletePrerequisiteBySubjectCode(String code);
     public void deleteRelateBySubjectCode(String code);
 
+    //커리어패스 편집
+    public CarrerPath getCarrerPathById(int id);
+    public void updateCarrerPath(CarrerPath carrerPath);
     }

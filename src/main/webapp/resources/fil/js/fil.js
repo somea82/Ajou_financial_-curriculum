@@ -166,7 +166,7 @@ function reset_color(){
 
                 if(ch_td!=null){
                     if (ch_td.className == "mandatory_span"){
-                        ch_td.style.background = "#d0d0d0";
+                        ch_td.style.background = "#e6f0ff";
                     }else{
                         ch_td.style.background = "";
                     }

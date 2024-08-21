@@ -39,7 +39,7 @@ header{
 */
 body {
     background-color: White; /* 아주 연한 파란색 */
-    color: white; /* 진한 파란색 */
+    color: #333333; /* 진한 파란색 */
     font-family: 'Noto Sans KR', sans-serif;
 }
 

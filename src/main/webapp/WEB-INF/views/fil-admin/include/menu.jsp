@@ -14,4 +14,5 @@
     </div>
     <a href='/admin'><div class="menu1" >교과과정 편집</div></a>
     <a href="/admin/subject"><div class="menu2"><p>과목편집</p></div></a>
+    <a href="/"><div class="menu3"><p>홈으로</p></div></a>
 </div>

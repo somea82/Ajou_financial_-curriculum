@@ -123,3 +123,26 @@
     background-color: #3462DC;
     color: #FFFF;
 }
+.menu3{
+    /* 메뉴-과목편집 */
+
+    position: fixed;
+    width: 12.8%;
+    height: 11%;
+    top: 270px;
+
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 0.94rem;
+    line-height: 2.7rem;
+    display: flex;
+    align-items: center;
+
+    padding-left: 4.2%;
+    color: #000000;
+}
+.menu3:hover{
+    background-color: #3462DC;
+    color: #FFFF;
+}

@@ -159,7 +159,7 @@
                             <p onclick="trackClick('${jobList.job_id}','${jobList.name}','${jobList.core_color}')">
                                 <c:out value="${jobList.name}"/>
                             </p>
-                            <button type="button" onclick="location.href='/jobdetail/${index}'">
+                            <button type="button" onclick="location.href='/jobdetail/${jobList.id}'">
                                 <img src="${pageContext.request.contextPath}/resources/fil/img/search.png">
                             </button>
                         </td>

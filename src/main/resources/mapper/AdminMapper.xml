@@ -91,6 +91,14 @@
         INSERT INTO linka.prerequisite_subjects(code, pre_subject_code) VALUES (#{code}, #{pre_subject_code})
     </insert>
 
+<!--    <insert id="addPrerequisite">-->
+<!--        INSERT INTO linka.prerequisite_subjects (code, pre_subject_code)-->
+<!--        VALUES-->
+<!--        <foreach collection="preSubjectCodes" item="preSubjectCode" separator=",">-->
+<!--            (#{code}, #{preSubjectCode})-->
+<!--        </foreach>-->
+<!--    </insert>-->
+
     <update id="updatePrerequisite">
         UPDATE linka.prerequisite_subjects SET pre_subject_code=#{pre_subject_code} WHERE code=#{code}
     </update>
@@ -102,5 +110,18 @@
     <delete id="deletePrerequisiteBySubjectCode" parameterType="String">
         DELETE FROM linka.prerequisite_subjects WHERE code = #{code}
     </delete>
+
+<!--    커리스 패스 편집-->
+    <select id="getCarrerPathById" parameterType="int" resultType="com.spring.starter.db.entity.CarrerPath">
+        SELECT id, job_info AS jobInfo, job_ex AS jobEx, ncs_code AS ncsCode
+        FROM carrer_path
+        WHERE id = #{id}
+    </select>
+
+    <update id="updateCarrerPath" parameterType="com.spring.starter.db.entity.CarrerPath">
+        UPDATE carrer_path
+        SET job_info = #{jobInfo}, job_ex = #{jobEx}, ncs_code = #{ncsCode}
+        WHERE id = #{id}
+    </update>
 
 </mapper>

@@ -1,7 +1,5 @@
 package com.spring.starter.api.controller;
 
-import com.spring.starter.api.service.SubjectService;
-
 import com.spring.starter.config.jwt.TokenDto;
 import com.spring.starter.config.jwt.TokenProvider;
 import com.spring.starter.dao.adminDAO;
@@ -23,8 +21,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.security.core.AuthenticationException;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,7 +39,16 @@ public class AdminController {
     private final SqlSession sqlSession;
 
     @GetMapping("/login")
-    public String showLoginForm() {
+    public String showLoginForm(HttpServletRequest request) {
+        Cookie[] cookies = request.getCookies();
+        if (cookies != null) {
+            for (Cookie cookie : cookies) {
+                if ("JWT".equals(cookie.getName())) {
+                    // JWT 쿠키가 있으면 관리자 페이지로 리다이렉트
+                    return "redirect:/admin";
+                }
+            }
+        }
         return "admin/login"; // 로그인 JSP 페이지
     }
     @PostMapping("/login")
@@ -70,6 +77,18 @@ public class AdminController {
             redirectAttributes.addFlashAttribute("error", "아이디 또는 비밀번호가 잘못되었습니다.");
             return "redirect:/login";
         }
+    }
+    @GetMapping("/editJobInfo")
+    public String editJobInfo(@RequestParam("id") String pageId, Model model) {
+        System.out.println("In AdminController.editJobInfo"+ pageId);
+        // pageId를 이용해 데이터베이스에서 직업 정보를 가져옴
+        // 예: JobDetail jobDetail = jobService.getJobDetailById(pageId);
+
+        // 가져온 데이터를 모델에 추가
+        // model.addAttribute("jobDetail", jobDetail);
+
+        // JSP 페이지의 경로를 반환 (뷰 리졸버가 실제 경로를 처리함)
+        return "jobdetail/edit_carrer_path";
     }
     @ResponseBody
     @RequestMapping(value="admin/curriculum/delete",method=RequestMethod.POST, produces="application/json; charset=utf-8")
@@ -162,7 +181,6 @@ public class AdminController {
     @ResponseBody
     @RequestMapping(value="/admin/subject/SubjectAdd", method=RequestMethod.POST, consumes = "application/json", produces = "application/json; charset=utf-8")
     public Map<String, Object> addFeSubject(@RequestBody(required = false) Map<String, Object> requestData) {
-        System.out.println("FeSubject add in");
 
         String code = (String) requestData.get("code");
         String name = (String) requestData.get("name");
@@ -201,6 +219,7 @@ public class AdminController {
 
         // 선수 과목 추가 로직
         for (String preSubjectCode : preSubjectCodes) {
+            System.out.println("AdminController.addFeSubject: "+ preSubjectCode);
             if (!preSubjectCode.equals("None")) {
                 dao.addPrerequisite(code, preSubjectCode);
             }
@@ -213,6 +232,7 @@ public class AdminController {
             }
         }
 
+        System.out.println("subject add in " + code);
         result.put("status", "success");
         return result;
     }
