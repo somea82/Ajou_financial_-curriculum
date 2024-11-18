@@ -7,8 +7,6 @@ public class jobDTO {
     private String core_color;
     private String support_color;
 
-
-
     public String getName()
     {
         return small_category;
@@ -47,7 +45,7 @@ public class jobDTO {
 
     public int getId()
     {
-        return id;
+        return this.id;
     }
 
     public void setId(int id)

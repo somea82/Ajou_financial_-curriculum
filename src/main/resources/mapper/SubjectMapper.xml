@@ -5,6 +5,23 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.starter.dao.cilDAO">
 
+<!--	carrerMapper-->
+	<resultMap id="CarrerMap" type="com.spring.starter.model.carrerDTO">
+		<result property="id" column="id"/> <!-- 필드명이 id로 변경됨 -->
+		<result property="largeCategory" column="large_category"/>
+		<result property="smallCategory" column="small_category"/>
+		<result property="jobInfo" column="job_info"/>
+		<result property="jobEx" column="job_ex"/>
+		<result property="ncsCode" column="ncs_code"/>
+	</resultMap>
+
+	<select id="getJobById" parameterType="long" resultMap="CarrerMap">
+		select *
+		from linka.carrer_path
+		where id = #{id}
+	</select>
+<!--carrerMapper-->
+
 	<select id="subjectAllList" resultType="com.spring.starter.model.adminSubjectDTO">
 		select *
 		from linka.fe_subject
@@ -42,7 +59,7 @@
 	</select>
 
 	<select id="mathList" resultType="com.spring.starter.model.mathDTO">
-		select fp.*,fs.name,fs.is_math
+		select fp.*, fs.name, fs.is_math
 		from linka.fil_position fp
 				 inner join linka.fe_subject fs
 							on fp.code = fs.code
@@ -51,7 +68,7 @@
 	</select>
 
 	<select id="jobList" resultType="com.spring.starter.model.jobDTO">
-		select jobs.small_category, ci.carrer_path_id , ci.core_color, ci.support_color
+		select jobs.id, jobs.small_category, ci.carrer_path_id , ci.core_color, ci.support_color
 		from linka.carrer_path jobs
 			inner join linka.carrer_id ci
 				on jobs.large_category = ci.large_category

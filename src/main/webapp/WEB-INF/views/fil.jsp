@@ -90,13 +90,13 @@
                                 <span id=tr16td4 onclick="on_off(2)">수학 과목
                                 </span></div></td>
 
-                                <td id="mark_td"><a id="tr13td5"><a class="season"> 2023년 금융공학과 전공 요람기준</a></a></td>
+                                <td id="mark_td"><a id="tr13td5"><a class="season"> 2025년 금융공학과 전공 요람기준</a></a></td>
                                 <c:set var="col" value="6"/>
                                 <%for(int j=0; j<4; j++){ %>
                                 <td><div class="mandatory_cont">
                                     <c:if test = "${subjectList[index].row_id==16}">
                                         <c:if test = "${subjectList[index].col_id==col}">
-                                            <span id="tr${subjectList[index].row_id}td${subjectList[index].col_id}"
+                                            <span class="hover-effect" id="tr${subjectList[index].row_id}td${subjectList[index].col_id}"
                                                   onclick="getDetail('${subjectList[index].code}')">
                                                 <c:out value="${subjectList[index].name}"/>
                                             </span>
@@ -115,16 +115,16 @@
                                     <c:if test = "${subjectList[index].row_id==row}">
                                         <c:if test = "${subjectList[index].col_id==col}" >
                                             <c:if test = "${subjectList[index].is_mandatory == 0}">
-                                                <span id="tr${subjectList[index].row_id}td${subjectList[index].col_id}"
+                                                <span id="tr${subjectList[index].row_id}td${subjectList[index].col_id}" class="hover-effect"
                                                       onclick="getDetail('${subjectList[index].code}')">
                                                     <c:out value="${subjectList[index].name}"/>
                                                 </span>
                                                 <div class="cs" id="cs_tr${subjectList[index].row_id}td${subjectList[index].col_id}"><a class="cs_txt_tr${subjectList[index].row_id}td${subjectList[index].col_id}">C</a></div>
                                             </c:if>
                                             <c:if test = "${subjectList[index].is_mandatory == 1}">
-                                                <span id="tr${subjectList[index].row_id}td${subjectList[index].col_id}" class="mandatory_span"
+                                                <span id="tr${subjectList[index].row_id}td${subjectList[index].col_id}" class="mandatory_span hover-effect"
                                                       onclick="getDetail('${subjectList[index].code}')">
-                                                    <c:out value="${subjectList[index].name}"/>
+                                                    <c:out value="${ subjectList[index].name}"/>
                                                 </span>
                                                 <div class="cs" id="cs_tr${subjectList[index].row_id}td${subjectList[index].col_id}"><a class="cs_txt_tr${subjectList[index].row_id}td${subjectList[index].col_id}">C</a></div>
 

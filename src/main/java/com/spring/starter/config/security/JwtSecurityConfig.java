@@ -49,12 +49,12 @@ public class JwtSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         JwtFilter jwtFilter = new JwtFilter(tokenProvider);
         http
-                .csrf().disable()
+                .cors().and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/", "/index", "/home", "/login", "/resources/**", "/WEB-INF/views/**", "/track", "/detail", "/jobdetail/**").permitAll() // 인증 없이 접근 가능한 경로
-                .antMatchers("/admin", "/WEB-INF/views/admin/**", "/WEB-INF/views/fil-admin/**").hasRole("ADMIN") // 인증 필요한 경로
+                .antMatchers("/", "/index", "/home", "/login", "/resources/**", "/WEB-INF/views/**", "/track", "/detail", "/jobdetail/**","admin","/WEB-INF/views/admin/**", "/WEB-INF/views/fil-admin/**").permitAll() // 인증 없이 접근 가능한 경로
+                .antMatchers( ).hasRole("ADMIN") // 인증 필요한 경로
                 .anyRequest().authenticated() // 그 외 모든 경로는 인증 필요
                 .and()
                 .exceptionHandling()

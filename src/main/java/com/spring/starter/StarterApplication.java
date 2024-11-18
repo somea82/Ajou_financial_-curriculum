@@ -6,7 +6,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @SpringBootApplication
-public class StarterApplication{
+public class StarterApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(StarterApplication.class, args);
 	}

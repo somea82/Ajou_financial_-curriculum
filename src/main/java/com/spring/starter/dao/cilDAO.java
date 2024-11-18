@@ -1,6 +1,8 @@
 package com.spring.starter.dao;
 
+import com.spring.starter.db.entity.CarrerPath;
 import com.spring.starter.model.filDTO;
+import com.spring.starter.model.carrerDTO;
 import com.spring.starter.model.jobDTO;
 import com.spring.starter.model.majorDTO;
 import com.spring.starter.model.cilDetailDTO;
@@ -28,4 +30,6 @@ public interface cilDAO {
 
     //public ArrayList<cilDetailCoreDTO> subjectDetailCoreList(String subject);
     public ArrayList<cilTrackDTO> subjectTrackList(@Param("carrer_path_id") String carrer_path_id, @Param("small_category") String small_category);
+
+    public carrerDTO getJobById(long id);
 }

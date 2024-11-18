@@ -8,6 +8,7 @@ import com.spring.starter.dao.cilDAO;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -27,6 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Slf4j
 @Controller
 @RequiredArgsConstructor
 public class AdminController {
@@ -57,24 +59,37 @@ public class AdminController {
                                       HttpServletResponse response,
                         RedirectAttributes redirectAttributes) {
         try {
+            log.info("Before authenticationManager.authenticate");
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(username, password)
             );
+            log.info("AdminController.login: log11");
 
             SecurityContextHolder.getContext().setAuthentication(authentication);
+            log.info("AdminController.login: log111");
             TokenDto tokenDto = tokenProvider.generateTokenDto(authentication);
+            log.info("AccessToken: " + tokenDto.getAccessToken());
 
             // JWT 토큰을 쿠키에 저장
             Cookie jwtCookie = new Cookie("JWT", tokenDto.getAccessToken());
-            jwtCookie.setHttpOnly(true);
-            jwtCookie.setSecure(true); // HTTPS에서만 사용하도록 설정
+            log.info("AdminController.login: log2");
+            jwtCookie.setHttpOnly(false);
+            log.info("AdminController.login: log3");
+            jwtCookie.setSecure(false); // HTTPS에서만 사용하도록 설정
+            log.info("AdminController.login: log4");
             jwtCookie.setPath("/");
+            log.info("AdminController.login: log5");
             jwtCookie.setMaxAge(60*60); // 1시간 동안 유효
+            log.info("AdminController.login: log6");
             response.addCookie(jwtCookie);
+
+            log.info("JWT 쿠키가 설정되었습니다: " + jwtCookie.getValue());
 
             return "redirect:/admin";
         }catch (AuthenticationException e) {
             redirectAttributes.addFlashAttribute("error", "아이디 또는 비밀번호가 잘못되었습니다.");
+            log.info("인증 실패");
+            e.printStackTrace();
             return "redirect:/login";
         }
     }

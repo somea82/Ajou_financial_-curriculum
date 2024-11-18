@@ -2,7 +2,7 @@ spring:
   datasource:
     #    TODO AWS RDS
     driver-class-name: org.mariadb.jdbc.Driver
-    jdbc-url: jdbc:mariadb://ajoufe.iptime.org:3306/linka
+    jdbc-url: jdbc:mariadb://202.30.16.90:3306/linka
     username: Ajou
 
     password: D2B4@GmpI3r*IqS0
@@ -59,6 +59,8 @@ spring:
 
 logging:
   level:
+    com.spring.starter.api.controller.AdminController: DEBUG  # AdminController 클래스에 대한 DEBUG 레벨 로그
+    com.spring.starter.api.security.TokenProvider: DEBUG  # TokenProvider 클래스에 대한 DEBUG 레벨 로그
     org:
       springframework:
         web:
@@ -100,5 +102,3 @@ spring:
   config:
     activate:
       on-profile: "prod"
-
-

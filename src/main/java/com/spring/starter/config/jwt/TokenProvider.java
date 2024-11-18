@@ -56,6 +56,8 @@ public class TokenProvider {
                 .compact();
 
         log.info("Generated Access Token: {}", accessToken);
+        log.info("TokenProvider.generateTokenDto");
+        System.out.flush();
 
         // Refresh Token 생성
         String refreshToken = Jwts.builder()
@@ -63,7 +65,9 @@ public class TokenProvider {
                 .signWith(key, SignatureAlgorithm.HS512)
                 .compact();
 
-        log.info("Generated Refresh Token: {}", refreshToken);
+        log.info("Generated Refresh To: {}", refreshToken);
+        log.info("TokenProvider.generateTokenDto1");
+        System.out.flush();
 
         return TokenDto.builder()
                 .grantType(BEARER_TYPE)
